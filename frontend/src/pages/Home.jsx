@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Award, Leaf, Users, Star } from 'lucide-react';
+import { ArrowRight, Award, Leaf, Users, Star, Heart, Truck, ShieldCheck, Quote } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 import ScrollReveal from '../components/animations/ScrollReveal';
 import axios from 'axios';
@@ -103,13 +103,13 @@ const Home = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.1, duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-            className="relative mb-5 sm:mb-6"
+            className="relative mb-4 sm:mb-5"
           >
-            <div className="absolute inset-0 blur-2xl bg-[#C9A84C]/20 rounded-full scale-150"></div>
+            <div className="absolute inset-0 blur-3xl bg-[#C9A84C]/15 rounded-full scale-[2]"></div>
             <img
               src="/logo.png"
               alt="چای جاویدان"
-              className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-[110px] md:h-[110px] object-contain drop-shadow-[0_8px_25px_rgba(201,168,76,0.4)]"
+              className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain drop-shadow-[0_6px_20px_rgba(201,168,76,0.35)]"
             />
           </motion.div>
 
@@ -189,38 +189,43 @@ const Home = () => {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAF7F0] dark:from-[#141A16] to-transparent pointer-events-none z-20"></div>
       </div>
 
-      {/* STATS - Count-up animation */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 -mt-6 relative z-10">
+      {/* STATS - Liquid Glass */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 -mt-8 relative z-10">
         <ScrollReveal>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#C9A84C]/30 rounded-3xl overflow-hidden">
-            {[
-              { number: "29+", label: "نوع چای ممتاز" },
-              { number: "85+", label: "سال تجربه" },
-              { number: "41K", label: "مشتری خوشحال" },
-              { number: "100%", label: "کیفیت تضمینی" }
-            ].map((stat, idx) => (
-              <div key={idx} className="bg-white dark:bg-[#1E2A22] px-4 sm:px-8 py-5 sm:py-7 text-center">
-                <div className="text-2xl sm:text-4xl font-semibold text-[#8B6914] dark:text-[#D4B85C] tracking-tighter">
-                  <CountUp end={stat.number} duration={2} />
+          <div className="backdrop-blur-2xl bg-white/50 dark:bg-[#1E2A22]/50 border border-white/40 dark:border-[#2D3D32]/40 rounded-3xl shadow-[0_8px_40px_-12px_rgba(201,168,76,0.15)] overflow-hidden">
+            <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-[#C9A84C]/10 dark:divide-[#2D3D32]/40">
+              {[
+                { number: "29+", label: "نوع چای ممتاز" },
+                { number: "30+", label: "سال تجربه" },
+                { number: "41K", label: "مشتری خوشحال" },
+                { number: "100%", label: "کیفیت تضمینی" }
+              ].map((stat, idx) => (
+                <div key={idx} className="px-4 sm:px-6 py-5 sm:py-7 text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-[#8B6914] dark:text-[#D4B85C] tracking-tight">
+                    <CountUp end={stat.number} duration={2} />
+                  </div>
+                  <div className="text-[10px] sm:text-xs tracking-widest text-[#C9A84C] mt-1.5 font-medium">{stat.label}</div>
                 </div>
-                <div className="text-[10px] sm:text-xs tracking-widest text-[#C9A84C] dark:text-[#C9A84C] mt-1">{stat.label}</div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </ScrollReveal>
       </div>
 
       {/* FEATURED PRODUCTS */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-16 pb-6">
-        <div className="flex items-end justify-between mb-6 sm:mb-8">
-          <div>
-            <div className="uppercase tracking-[3px] text-xs text-[#C9A84C] dark:text-[#C9A84C] font-medium">پیشنهاد ما</div>
-            <h2 className="text-3xl sm:section-header text-[#8B6914] dark:text-[#D4B85C]">چای‌های برگزیده</h2>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20 pb-6">
+        <ScrollReveal>
+          <div className="flex items-end justify-between mb-8 sm:mb-10">
+            <div>
+              <div className="uppercase tracking-[4px] text-[10px] sm:text-xs text-[#C9A84C] font-bold mb-2">پیشنهاد ما</div>
+              <h2 className="text-3xl sm:text-4xl md:text-[42px] font-bold tracking-tight text-[#8B6914] dark:text-[#D4B85C]">چای‌های برگزیده</h2>
+            </div>
+            <Link to="/shop" className="hidden sm:flex items-center gap-2 text-sm text-[#C9A84C] hover:text-[#8B6914] font-medium group">
+              مشاهده همه
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
           </div>
-          <Link to="/shop" className="hidden sm:flex items-center text-sm text-[#C9A84C] dark:text-[#C9A84C] hover:text-[#8B6914] dark:hover:text-[#D4B85C] gap-2 font-medium">
-            مشاهده همه <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-5">
           {featuredProducts.map((product, index) => (
@@ -228,64 +233,141 @@ const Home = () => {
               key={product.id}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.04 }}
+              transition={{ delay: index * 0.08, duration: 0.5 }}
             >
               <ProductCard product={product} />
             </motion.div>
           ))}
         </div>
 
-        <Link to="/shop" className="sm:hidden flex items-center justify-center text-sm text-[#C9A84C] dark:text-[#C9A84C] mt-6 font-medium gap-2">
+        <Link to="/shop" className="sm:hidden flex items-center justify-center text-sm text-[#C9A84C] mt-8 font-medium gap-2">
           مشاهده همه محصولات <ArrowRight className="w-4 h-4" />
         </Link>
       </div>
 
-      {/* REGIONS */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+      {/* STORY SECTION - Liquid Glass */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
         <ScrollReveal>
-          <Link to="/shop?region=گیلان" className="group relative rounded-3xl overflow-hidden aspect-[16/9] md:aspect-auto md:h-[420px] block">
-            <img src="https://picsum.photos/id/1016/1200/800" alt="گیلان" className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" />
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%)' }}></div>
-            <div className="absolute bottom-0 p-8 sm:p-12 text-white">
-              <div className="flex items-center gap-2 mb-2">
-                <Leaf className="w-5 h-5 sm:w-6 sm:h-6 text-[#D4B85C]" />
-                <span className="uppercase tracking-widest text-xs sm:text-sm font-medium text-[#D4B85C]">چای ایرانی</span>
+          <div className="relative rounded-[2rem] overflow-hidden">
+            <img src="https://picsum.photos/id/1016/1400/600" alt="داستان ما" className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1B3A2B]/90 via-[#1B3A2B]/70 to-transparent"></div>
+            <div className="relative z-10 p-8 sm:p-12 md:p-16 flex flex-col md:flex-row items-center gap-8 md:gap-16">
+              <div className="flex-1 text-white">
+                <div className="uppercase tracking-[4px] text-[10px] text-[#D4B85C] font-bold mb-3">داستان ما</div>
+                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4 leading-tight">از باغ تا فنجان</h2>
+                <p className="text-white/80 text-sm sm:text-base leading-relaxed max-w-lg mb-6">
+                  {content.aboutText}
+                </p>
+                <Link to="/about" className="inline-flex items-center gap-2 text-sm font-medium text-[#D4B85C] hover:text-white transition-colors group">
+                  خواندن داستان کامل
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </Link>
               </div>
-              <div className="text-4xl sm:text-6xl font-semibold tracking-tighter mb-2">گیلان</div>
-              <p className="text-white/90 text-sm sm:text-lg mt-2 max-w-lg">چای سیاه و سبز ممتاز از بهترین باغات استان گیلان</p>
-              <div className="mt-4 sm:mt-6 inline-block text-xs sm:text-sm px-6 sm:px-8 py-2.5 border border-white/40 rounded-2xl group-hover:bg-white/10 transition-all">مشاهده محصولات گیلان</div>
+              <div className="hidden md:block w-px h-48 bg-white/15"></div>
+              <div className="flex flex-col gap-4 text-center md:text-right">
+                <div className="backdrop-blur-xl bg-white/10 border border-white/15 rounded-2xl px-6 py-4">
+                  <div className="text-2xl font-bold text-[#D4B85C]">۱۳۷۵</div>
+                  <div className="text-[10px] text-white/60 tracking-widest mt-1">سال تأسیس</div>
+                </div>
+                <div className="backdrop-blur-xl bg-white/10 border border-white/15 rounded-2xl px-6 py-4">
+                  <div className="text-2xl font-bold text-[#D4B85C]">۲ استان</div>
+                  <div className="text-[10px] text-white/60 tracking-widest mt-1">محور تولید</div>
+                </div>
+              </div>
             </div>
-          </Link>
+          </div>
         </ScrollReveal>
       </div>
 
-      {/* WHY US */}
-      <div className="bg-white dark:bg-[#1E2A22] py-16 sm:py-20">
+      {/* WHY US - Liquid Glass Cards */}
+      <div className="py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <ScrollReveal>
-            <div className="text-center mb-10 sm:mb-12">
-              <div className="text-[#C9A84C] dark:text-[#C9A84C] text-xs tracking-[4px]">چرا چای جاویدان؟</div>
-              <h2 className="text-3xl sm:text-4xl tracking-tight mt-1.5 text-[#8B6914] dark:text-[#D4B85C]">تجربه‌ای متفاوت</h2>
+            <div className="text-center mb-10 sm:mb-14">
+              <div className="text-[#C9A84C] text-[10px] sm:text-xs tracking-[5px] font-bold mb-2">چرا چای جاویدان؟</div>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#8B6914] dark:text-[#D4B85C]">تجربه‌ای متفاوت</h2>
             </div>
           </ScrollReveal>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {[
-              { icon: Leaf, title: "برگ‌های برگزیده", desc: "دستی انتخاب‌شده از بهترین باغات" },
-              { icon: Award, title: "کیفیت ممتاز", desc: "استانداردهای بین‌المللی" },
-              { icon: Users, title: "ارتباط مستقیم", desc: "از کشاورزان تا فنجان شما" }
+              { icon: Leaf, title: "برگ‌های برگزیده", desc: "دستی انتخاب‌شده از بهترین باغات گیلان و بوشهر" },
+              { icon: ShieldCheck, title: "کیفیت ممتاز", desc: "استانداردهای بین‌المللی و آزمایشگاه مجهز" },
+              { icon: Truck, title: "ارسال سریع", desc: "ارسال به سراسر کشور در کمتر از ۳ روز" },
+              { icon: Heart, title: "رضایت مشتری", desc: "بیش از ۴۱ هزار مشتری راضی و وفادار" }
             ].map((item, i) => (
-              <ScrollReveal key={i} delay={i * 0.15}>
-                <div className="bg-[#FAF7F0] dark:bg-[#141A16] p-6 sm:p-8 rounded-3xl border border-[#C9A84C]/20 dark:border-[#2D3D32] h-full">
-                  <div className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center rounded-2xl bg-white dark:bg-[#1E2A22] border border-[#C9A84C]/20 dark:border-[#2D3D32] mb-5 sm:mb-6">
-                    <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#1B3A2B]" />
+              <ScrollReveal key={i} delay={i * 0.1}>
+                <div className="backdrop-blur-xl bg-white/50 dark:bg-[#1E2A22]/50 border border-white/40 dark:border-[#2D3D32]/40 p-6 sm:p-7 rounded-3xl shadow-[0_4px_24px_-8px_rgba(201,168,76,0.1)] h-full hover:shadow-[0_8px_32px_-8px_rgba(201,168,76,0.2)] transition-shadow">
+                  <div className="w-11 h-11 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#1B3A2B]/10 to-[#C9A84C]/10 border border-[#C9A84C]/15 mb-5">
+                    <item.icon className="w-5 h-5 text-[#1B3A2B] dark:text-[#D4B85C]" />
                   </div>
-                  <div className="text-lg sm:text-xl font-semibold tracking-tight text-[#8B6914] dark:text-[#D4B85C] mb-2">{item.title}</div>
-                  <p className="text-xs sm:text-sm text-[#C9A84C] dark:text-[#C9A84C] leading-relaxed">{item.desc}</p>
+                  <div className="text-base sm:text-lg font-bold tracking-tight text-[#8B6914] dark:text-[#D4B85C] mb-1.5">{item.title}</div>
+                  <p className="text-xs sm:text-sm text-[#C9A84C] leading-relaxed">{item.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* TESTIMONIALS - Liquid Glass */}
+      <div className="py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <ScrollReveal>
+            <div className="text-center mb-10 sm:mb-14">
+              <div className="text-[#C9A84C] text-[10px] sm:text-xs tracking-[5px] font-bold mb-2">نظرات مشتریان</div>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#8B6914] dark:text-[#D4B85C]">چه می‌گویند؟</h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-5">
+            {[
+              { name: "سارا محمدی", role: "خریدار دائمی", text: "بهترین چایی که تا حالا خوردم. عطر و طعمش واقعاً بی‌نظیره و هر بار با خریدم راضی‌تر می‌شم.", rating: 5 },
+              { name: "رضا کریمی", role: "قهوه‌خانه‌دار", text: "مشتریام عاشق چای جاویدان شدن. کیفیتش همیشه یکدست و عالیه. بهترین انتخاب برای کسب‌وکارم بود.", rating: 5 },
+              { name: "مریم احمدی", role: "علاقه‌مند به چای", text: "بسته‌بندی شیک، ارسال سریع و مهم‌تر از همه طعم اصیل چای ایرانی. قطعاً بازم خرید می‌کنم.", rating: 5 }
+            ].map((item, i) => (
+              <ScrollReveal key={i} delay={i * 0.12}>
+                <div className="backdrop-blur-xl bg-white/50 dark:bg-[#1E2A22]/50 border border-white/40 dark:border-[#2D3D32]/40 p-6 sm:p-7 rounded-3xl shadow-[0_4px_24px_-8px_rgba(201,168,76,0.1)] h-full flex flex-col">
+                  <Quote className="w-8 h-8 text-[#C9A84C]/30 mb-3" />
+                  <p className="text-sm sm:text-[15px] text-[#8B6914] dark:text-[#D4B85C]/90 leading-relaxed flex-1 mb-5">{item.text}</p>
+                  <div className="flex items-center gap-1 mb-3">
+                    {[...Array(item.rating)].map((_, j) => (
+                      <Star key={j} className="w-3.5 h-3.5 fill-[#D4B85C] text-[#D4B85C]" />
+                    ))}
+                  </div>
+                  <div className="border-t border-[#C9A84C]/10 dark:border-[#2D3D32]/40 pt-4">
+                    <div className="text-sm font-bold text-[#8B6914] dark:text-[#D4B85C]">{item.name}</div>
+                    <div className="text-[10px] text-[#C9A84C] tracking-wider mt-0.5">{item.role}</div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* CTA - Liquid Glass */}
+      <div className="py-12 sm:py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <ScrollReveal>
+            <div className="relative rounded-[2rem] overflow-hidden">
+              <img src="https://picsum.photos/id/1018/1200/500" alt="CTA" className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-[#1B3A2B]/80"></div>
+              <div className="relative z-10 backdrop-blur-sm bg-white/5 border border-white/10 rounded-[2rem] p-8 sm:p-12 md:p-16 text-center">
+                <div className="uppercase tracking-[4px] text-[10px] text-[#D4B85C] font-bold mb-3">پیشنهاد ویژه</div>
+                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4">اولین خریدتان با تخفیف ویژه</h2>
+                <p className="text-white/70 text-sm sm:text-base max-w-md mx-auto mb-8 leading-relaxed">
+                  همین حالا عضو خبرنامه شوید و ۱۵٪ تخفیف اولین خریدتان را دریافت کنید.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                  <input type="email" placeholder="ایمیل خود را وارد کنید" className="flex-1 bg-white/10 border border-white/20 text-white placeholder:text-white/40 px-5 py-3 rounded-2xl text-sm focus:outline-none focus:border-[#D4B85C]/50" />
+                  <button className="px-6 py-3 bg-gradient-to-r from-[#D4B85C] to-[#C9A84C] text-[#1B3A2B] font-bold text-sm rounded-2xl hover:from-[#C9A84C] hover:to-[#8B6914] transition-all shadow-lg hover:shadow-xl whitespace-nowrap">
+                    عضویت
+                  </button>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </div>
