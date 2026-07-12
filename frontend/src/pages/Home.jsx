@@ -74,9 +74,9 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="pt-20">
+    <div className="pt-20 overflow-x-hidden">
       {/* HERO - Parallax with floating leaves */}
-      <div ref={heroRef} className="relative h-[92vh] flex items-center justify-center overflow-hidden bg-[#141A16]">
+      <div ref={heroRef} className="relative min-h-[85vh] h-[92vh] flex items-center justify-center overflow-hidden bg-[#141A16]">
         <div className="absolute inset-0 bg-[radial-gradient(#C9A84C_0.6px,transparent_1px)] bg-[length:6px_6px] opacity-20"></div>
 
         <motion.div className="absolute inset-0 will-change-transform" style={{ y: heroY, opacity: heroOpacity }}>
@@ -129,7 +129,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.45, duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
-            className="text-white text-[44px] sm:text-6xl md:text-[78px] leading-[1.05] font-bold tracking-tight"
+            className="text-white text-[36px] sm:text-5xl md:text-[78px] leading-[1.05] font-bold tracking-tight"
             style={{ textShadow: '0 4px 40px rgba(0,0,0,0.5), 0 1px 6px rgba(0,0,0,0.3)' }}
           >
             {content.heroTitle}
@@ -193,7 +193,7 @@ const Home = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 -mt-8 relative z-10">
         <ScrollReveal>
           <div className="backdrop-blur-2xl bg-white/50 dark:bg-[#1E2A22]/50 border border-white/40 dark:border-[#2D3D32]/40 rounded-3xl shadow-[0_8px_40px_-12px_rgba(201,168,76,0.15)] overflow-hidden">
-            <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-[#C9A84C]/10 dark:divide-[#2D3D32]/40">
+            <div className="grid grid-cols-2 md:grid-cols-4 md:divide-x divide-y md:divide-y-0 divide-[#C9A84C]/10 dark:divide-[#2D3D32]/40">
               {[
                 { number: "29+", label: "نوع چای ممتاز" },
                 { number: "30+", label: "سال تجربه" },
@@ -251,7 +251,7 @@ const Home = () => {
           <div className="relative rounded-[2rem] overflow-hidden">
             <img src="https://picsum.photos/id/1016/1400/600" alt="داستان ما" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#1B3A2B]/90 via-[#1B3A2B]/70 to-transparent"></div>
-            <div className="relative z-10 p-8 sm:p-12 md:p-16 flex flex-col md:flex-row items-center gap-8 md:gap-16">
+            <div className="relative z-10 p-5 sm:p-10 md:p-16 flex flex-col md:flex-row items-center gap-6 sm:gap-8 md:gap-16">
               <div className="flex-1 text-white">
                 <div className="uppercase tracking-[4px] text-[10px] text-[#D4B85C] font-bold mb-3">داستان ما</div>
                 <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4 leading-tight">از باغ تا فنجان</h2>
@@ -297,7 +297,7 @@ const Home = () => {
               { icon: Heart, title: "رضایت مشتری", desc: "بیش از ۴۱ هزار مشتری راضی و وفادار" }
             ].map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="backdrop-blur-xl bg-white/50 dark:bg-[#1E2A22]/50 border border-white/40 dark:border-[#2D3D32]/40 p-6 sm:p-7 rounded-3xl shadow-[0_4px_24px_-8px_rgba(201,168,76,0.1)] h-full hover:shadow-[0_8px_32px_-8px_rgba(201,168,76,0.2)] transition-shadow">
+                <div className="backdrop-blur-xl bg-white/50 dark:bg-[#1E2A22]/50 border border-white/40 dark:border-[#2D3D32]/40 p-5 sm:p-7 rounded-3xl shadow-[0_4px_24px_-8px_rgba(201,168,76,0.1)] h-full hover:shadow-[0_8px_32px_-8px_rgba(201,168,76,0.2)] transition-shadow">
                   <div className="w-11 h-11 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#1B3A2B]/10 to-[#C9A84C]/10 border border-[#C9A84C]/15 mb-5">
                     <item.icon className="w-5 h-5 text-[#1B3A2B] dark:text-[#D4B85C]" />
                   </div>
@@ -327,7 +327,7 @@ const Home = () => {
               { name: "مریم احمدی", role: "علاقه‌مند به چای", text: "بسته‌بندی شیک، ارسال سریع و مهم‌تر از همه طعم اصیل چای ایرانی. قطعاً بازم خرید می‌کنم.", rating: 5 }
             ].map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.12}>
-                <div className="backdrop-blur-xl bg-white/50 dark:bg-[#1E2A22]/50 border border-white/40 dark:border-[#2D3D32]/40 p-6 sm:p-7 rounded-3xl shadow-[0_4px_24px_-8px_rgba(201,168,76,0.1)] h-full flex flex-col">
+                <div className="backdrop-blur-xl bg-white/50 dark:bg-[#1E2A22]/50 border border-white/40 dark:border-[#2D3D32]/40 p-5 sm:p-7 rounded-3xl shadow-[0_4px_24px_-8px_rgba(201,168,76,0.1)] h-full flex flex-col">
                   <Quote className="w-8 h-8 text-[#C9A84C]/30 mb-3" />
                   <p className="text-sm sm:text-[15px] text-[#8B6914] dark:text-[#D4B85C]/90 leading-relaxed flex-1 mb-5">{item.text}</p>
                   <div className="flex items-center gap-1 mb-3">
@@ -353,7 +353,7 @@ const Home = () => {
             <div className="relative rounded-[2rem] overflow-hidden">
               <img src="https://picsum.photos/id/1018/1200/500" alt="CTA" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-[#1B3A2B]/80"></div>
-              <div className="relative z-10 backdrop-blur-sm bg-white/5 border border-white/10 rounded-[2rem] p-8 sm:p-12 md:p-16 text-center">
+              <div className="relative z-10 backdrop-blur-sm bg-white/5 border border-white/10 rounded-[2rem] p-6 sm:p-10 md:p-16 text-center">
                 <div className="uppercase tracking-[4px] text-[10px] text-[#D4B85C] font-bold mb-3">پیشنهاد ویژه</div>
                 <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4">اولین خریدتان با تخفیف ویژه</h2>
                 <p className="text-white/70 text-sm sm:text-base max-w-md mx-auto mb-8 leading-relaxed">
