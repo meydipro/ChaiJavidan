@@ -57,13 +57,13 @@ const Navbar = ({ setIsMegaMenuOpen, isMegaMenuOpen, setIsCartOpen, searchQuery,
         <div className="flex items-center justify-between h-full px-5">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 group shrink-0">
-            <div className="relative w-11 h-11 rounded-xl bg-gradient-to-br from-white/80 to-gold-50/60 border border-gold-200/50 shadow-sm backdrop-blur-sm overflow-hidden">
+            <div className="relative w-11 h-11 rounded-xl bg-gradient-to-br from-white/80 to-[#f5efe4]/60 border border-[#c9a84c]/30 shadow-sm backdrop-blur-sm overflow-hidden">
               <img src="/logo.png" alt="چای جاویدان" className="w-full h-full object-cover relative z-10" />
-              <div className="absolute inset-0 bg-gradient-to-br from-gold-shine/10 via-transparent to-gold-600/5"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#e8c84a]/10 via-transparent to-[#1a3a2a]/10"></div>
             </div>
             <div className="hidden sm:block">
-              <div className="font-amiri text-lg tracking-tight text-gold-800 dark:text-gold-300 font-bold leading-tight">چای جاویدان</div>
-              <div className="text-[8px] text-gold-500 dark:text-gold-400 tracking-[3px] font-medium">CHAI JAVIDAN</div>
+              <div className="font-amiri text-lg tracking-tight text-[#5c4814] dark:text-[#e8c84a] font-bold leading-tight">چای جاویدان</div>
+              <div className="text-[8px] text-[#9a7a24] dark:text-[#c9a84c] tracking-[3px] font-medium">CHAI JAVIDAN</div>
             </div>
           </Link>
 

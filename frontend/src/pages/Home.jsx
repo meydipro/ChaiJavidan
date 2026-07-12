@@ -74,8 +74,8 @@ const Home = () => {
   return (
     <div className="pt-20">
       {/* HERO - Parallax with floating leaves */}
-      <div ref={heroRef} className="relative h-[92vh] flex items-center justify-center overflow-hidden bg-cream dark:bg-[#2A2520]">
-        <div className="absolute inset-0 bg-[radial-gradient(#C9A96E_0.6px,transparent_1px)] bg-[length:6px_6px] opacity-30"></div>
+      <div ref={heroRef} className="relative h-[92vh] flex items-center justify-center overflow-hidden bg-[#f5efe4] dark:bg-[#2A2520]">
+        <div className="absolute inset-0 bg-[radial-gradient(#c9a84c_0.6px,transparent_1px)] bg-[length:6px_6px] opacity-30"></div>
 
         <motion.div className="absolute inset-0" style={{ y: heroY, opacity: heroOpacity }}>
           <img src={content.heroImage} alt="چای جاویدان" className="w-full h-full object-cover opacity-75" />
@@ -84,22 +84,29 @@ const Home = () => {
 
         {/* Floating tea leaves */}
         <div className="absolute inset-0 pointer-events-none">
-          <svg className="float-particle absolute top-[15%] left-[10%] w-8 h-8 text-gold-300/40" viewBox="0 0 24 24" fill="currentColor" style={{ animationDelay: '0s' }}>
+          <svg className="float-particle absolute top-[15%] left-[10%] w-8 h-8 text-[#c9a84c]/40" viewBox="0 0 24 24" fill="currentColor" style={{ animationDelay: '0s' }}>
             <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
           </svg>
-          <svg className="float-particle absolute top-[25%] right-[15%] w-6 h-6 text-gold-400/30" viewBox="0 0 24 24" fill="currentColor" style={{ animationDelay: '2s' }}>
+          <svg className="float-particle absolute top-[25%] right-[15%] w-6 h-6 text-[#e8c84a]/30" viewBox="0 0 24 24" fill="currentColor" style={{ animationDelay: '2s' }}>
             <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
           </svg>
-          <svg className="float-particle absolute bottom-[30%] left-[20%] w-7 h-7 text-gold-200/35" viewBox="0 0 24 24" fill="currentColor" style={{ animationDelay: '4s' }}>
+          <svg className="float-particle absolute bottom-[30%] left-[20%] w-7 h-7 text-[#1a3a2a]/35" viewBox="0 0 24 24" fill="currentColor" style={{ animationDelay: '4s' }}>
             <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
           </svg>
         </div>
 
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl">
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.1, duration: 0.6 }} className="flex justify-center mb-4 sm:mb-6">
+            <div className="relative w-20 h-20 sm:w-28 sm:h-28 rounded-2xl bg-gradient-to-br from-white/80 to-[#f5efe4]/60 border border-[#c9a84c]/30 shadow-lg backdrop-blur-sm overflow-hidden">
+              <img src="/logo.png" alt="چای جاویدان" className="w-full h-full object-cover relative z-10" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#e8c84a]/10 via-transparent to-[#1a3a2a]/10"></div>
+            </div>
+          </motion.div>
+
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.6 }} className="flex justify-center mb-4 sm:mb-6">
-            <div className="flex items-center gap-2.5 bg-white/90 backdrop-blur-xl px-4 sm:px-5 py-1.5 rounded-full border border-gold-200">
-              <div className="w-2 h-2 rounded-full bg-gold-600 animate-pulse-soft"></div>
-              <span className="text-xs sm:text-sm font-medium text-gold-800">از سال ۱۳۷۵</span>
+            <div className="flex items-center gap-2.5 bg-white/90 backdrop-blur-xl px-4 sm:px-5 py-1.5 rounded-full border border-[#c9a84c]/30">
+              <div className="w-2 h-2 rounded-full bg-[#1a3a2a] animate-pulse-soft"></div>
+              <span className="text-xs sm:text-sm font-medium text-[#5c4814]">از سال ۱۳۷۵</span>
             </div>
           </motion.div>
 
@@ -137,7 +144,7 @@ const Home = () => {
       {/* STATS - Count-up animation */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 -mt-6 relative z-10">
         <ScrollReveal>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-gold-200 rounded-3xl overflow-hidden">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#c9a84c]/30 rounded-3xl overflow-hidden">
             {[
               { number: "29+", label: "نوع چای ممتاز" },
               { number: "85+", label: "سال تجربه" },
@@ -145,10 +152,10 @@ const Home = () => {
               { number: "2", label: "استان" }
             ].map((stat, idx) => (
               <div key={idx} className="bg-white dark:bg-[#2A2520] px-4 sm:px-8 py-5 sm:py-7 text-center">
-                <div className="text-2xl sm:text-4xl font-semibold text-gold-800 dark:text-gold-300 tracking-tighter">
+                <div className="text-2xl sm:text-4xl font-semibold text-[#5c4814] dark:text-[#e8c84a] tracking-tighter">
                   <CountUp end={stat.number} duration={2} />
                 </div>
-                <div className="text-[10px] sm:text-xs tracking-widest text-gold-600 dark:text-gold-400 mt-1">{stat.label}</div>
+                <div className="text-[10px] sm:text-xs tracking-widest text-[#9a7a24] dark:text-[#c9a84c] mt-1">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -159,10 +166,10 @@ const Home = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-16 pb-6">
         <div className="flex items-end justify-between mb-6 sm:mb-8">
           <div>
-            <div className="uppercase tracking-[3px] text-xs text-gold-600 dark:text-gold-400 font-medium">پیشنهاد ما</div>
-            <h2 className="text-3xl sm:section-header text-gold-900 dark:text-gold-300">چای‌های برگزیده</h2>
+            <div className="uppercase tracking-[3px] text-xs text-[#9a7a24] dark:text-[#c9a84c] font-medium">پیشنهاد ما</div>
+            <h2 className="text-3xl sm:section-header text-[#5c4814] dark:text-[#e8c84a]">چای‌های برگزیده</h2>
           </div>
-          <Link to="/shop" className="hidden sm:flex items-center text-sm text-gold-700 dark:text-gold-400 hover:text-gold-900 dark:hover:text-gold-300 gap-2 font-medium">
+          <Link to="/shop" className="hidden sm:flex items-center text-sm text-[#9a7a24] dark:text-[#c9a84c] hover:text-[#5c4814] dark:hover:text-[#e8c84a] gap-2 font-medium">
             مشاهده همه <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -180,7 +187,7 @@ const Home = () => {
           ))}
         </div>
 
-        <Link to="/shop" className="sm:hidden flex items-center justify-center text-sm text-gold-700 dark:text-gold-400 mt-6 font-medium gap-2">
+        <Link to="/shop" className="sm:hidden flex items-center justify-center text-sm text-[#9a7a24] dark:text-[#c9a84c] mt-6 font-medium gap-2">
           مشاهده همه محصولات <ArrowRight className="w-4 h-4" />
         </Link>
       </div>
@@ -194,11 +201,11 @@ const Home = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40"></div>
               <div className="absolute bottom-0 p-5 sm:p-8 text-white">
                 <div className="flex items-center gap-2 mb-1">
-                  <Leaf className="w-4 h-4 sm:w-5 sm:h-5 text-gold-300" />
-                  <span className="uppercase tracking-widest text-[10px] sm:text-xs font-medium text-gold-300">استان</span>
+                  <Leaf className="w-4 h-4 sm:w-5 sm:h-5 text-[#e8c84a]" />
+                  <span className="uppercase tracking-widest text-[10px] sm:text-xs font-medium text-[#e8c84a]">استان</span>
                 </div>
                 <div className="text-3xl sm:text-5xl font-semibold tracking-tighter">گیلان</div>
-                <p className="text-gold-200 text-xs sm:text-sm mt-2 max-w-xs">چای سیاه ممتاز • عطر و طعم بی‌نظیر</p>
+                <p className="text-[#f0d860] text-xs sm:text-sm mt-2 max-w-xs">چای سیاه ممتاز • عطر و طعم بی‌نظیر</p>
                 <div className="mt-3 sm:mt-4 inline-block text-[10px] sm:text-xs px-4 sm:px-5 py-1.5 border border-white/40 rounded-2xl group-hover:bg-white/10">مشاهده محصولات گیلان</div>
               </div>
             </Link>
@@ -210,11 +217,11 @@ const Home = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40"></div>
               <div className="absolute bottom-0 p-5 sm:p-8 text-white">
                 <div className="flex items-center gap-2 mb-1">
-                  <Award className="w-4 h-4 sm:w-5 sm:h-5 text-gold-300" />
-                  <span className="uppercase tracking-widest text-[10px] sm:text-xs font-medium text-gold-300">استان</span>
+                  <Award className="w-4 h-4 sm:w-5 sm:h-5 text-[#e8c84a]" />
+                  <span className="uppercase tracking-widest text-[10px] sm:text-xs font-medium text-[#e8c84a]">استان</span>
                 </div>
                 <div className="text-3xl sm:text-5xl font-semibold tracking-tighter">بوشهر</div>
-                <p className="text-gold-200 text-xs sm:text-sm mt-2 max-w-xs">چای سبز و سفید ارگانیک</p>
+                <p className="text-[#f0d860] text-xs sm:text-sm mt-2 max-w-xs">چای سبز و سفید ارگانیک</p>
                 <div className="mt-3 sm:mt-4 inline-block text-[10px] sm:text-xs px-4 sm:px-5 py-1.5 border border-white/40 rounded-2xl group-hover:bg-white/10">مشاهده محصولات بوشهر</div>
               </div>
             </Link>
@@ -227,8 +234,8 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <ScrollReveal>
             <div className="text-center mb-10 sm:mb-12">
-              <div className="text-gold-600 dark:text-gold-400 text-xs tracking-[4px]">چرا چای جاویدان؟</div>
-              <h2 className="text-3xl sm:text-4xl tracking-tight mt-1.5 text-gold-900 dark:text-gold-300">تجربه‌ای متفاوت</h2>
+              <div className="text-[#9a7a24] dark:text-[#c9a84c] text-xs tracking-[4px]">چرا چای جاویدان؟</div>
+              <h2 className="text-3xl sm:text-4xl tracking-tight mt-1.5 text-[#5c4814] dark:text-[#e8c84a]">تجربه‌ای متفاوت</h2>
             </div>
           </ScrollReveal>
 
@@ -239,12 +246,12 @@ const Home = () => {
               { icon: Users, title: "ارتباط مستقیم", desc: "از کشاورزان تا فنجان شما" }
             ].map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.15}>
-                <div className="bg-cream dark:bg-[#1A1814] p-6 sm:p-8 rounded-3xl border border-gold-100 dark:border-[#3D3630] h-full">
-                  <div className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center rounded-2xl bg-white dark:bg-[#2A2520] border border-gold-100 dark:border-[#3D3630] mb-5 sm:mb-6">
-                    <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-gold-700" />
+                <div className="bg-[#f5efe4] dark:bg-[#1A1814] p-6 sm:p-8 rounded-3xl border border-[#c9a84c]/20 dark:border-[#3D3630] h-full">
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center rounded-2xl bg-white dark:bg-[#2A2520] border border-[#c9a84c]/20 dark:border-[#3D3630] mb-5 sm:mb-6">
+                    <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#1a3a2a]" />
                   </div>
-                  <div className="text-lg sm:text-xl font-semibold tracking-tight text-gold-900 dark:text-gold-300 mb-2">{item.title}</div>
-                  <p className="text-xs sm:text-sm text-gold-600 dark:text-gold-400 leading-relaxed">{item.desc}</p>
+                  <div className="text-lg sm:text-xl font-semibold tracking-tight text-[#5c4814] dark:text-[#e8c84a] mb-2">{item.title}</div>
+                  <p className="text-xs sm:text-sm text-[#9a7a24] dark:text-[#c9a84c] leading-relaxed">{item.desc}</p>
                 </div>
               </ScrollReveal>
             ))}

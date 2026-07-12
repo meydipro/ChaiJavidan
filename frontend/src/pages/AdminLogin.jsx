@@ -24,24 +24,24 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#f8f5e9] dark:bg-[#1A1814] flex items-center justify-center pt-12">
+    <div className="min-h-screen bg-[#f5efe4] dark:bg-[#1A1814] flex items-center justify-center pt-12">
       <div className="max-w-md w-full mx-auto px-6">
         <div className="text-center mb-9">
           <div className="flex justify-center mb-6">
-            <div className="relative w-16 h-16 bg-gradient-to-br from-white/80 to-gold-50/60 border border-gold-200/50 shadow-md overflow-hidden">
+            <div className="relative w-16 h-16 bg-gradient-to-br from-white/80 to-[#f5efe4]/60 border border-[#c9a84c]/30 shadow-md overflow-hidden">
               <img src="/logo.png" className="w-full h-full object-cover relative z-10" alt="" />
-              <div className="absolute inset-0 bg-gradient-to-br from-gold-shine/10 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#e8c84a]/10 to-transparent"></div>
             </div>
           </div>
-          <div className="font-amiri text-4xl tracking-tight text-gold-800 dark:text-gold-300 font-bold">چای جاویدان</div>
-          <p className="text-sm text-gold-600 dark:text-gold-400 mt-1">پنل مدیریت</p>
+          <div className="font-amiri text-4xl tracking-tight text-[#5c4814] dark:text-[#e8c84a] font-bold">چای جاویدان</div>
+          <p className="text-sm text-[#9a7a24] dark:text-[#c9a84c] mt-1">پنل مدیریت</p>
         </div>
 
         <div className="admin-card">
           <form onSubmit={handleLogin}>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm text-gold-700 dark:text-gold-400 mb-1.5">ایمیل</label>
+                <label className="block text-sm text-[#9a7a24] dark:text-[#c9a84c] mb-1.5">ایمیل</label>
                 <input 
                   type="email" 
                   value={email} 
@@ -51,7 +51,7 @@ const AdminLogin = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm text-gold-700 dark:text-gold-400 mb-1.5">رمز عبور</label>
+                <label className="block text-sm text-[#9a7a24] dark:text-[#c9a84c] mb-1.5">رمز عبور</label>
                 <input 
                   type="password" 
                   value={password} 
@@ -72,7 +72,7 @@ const AdminLogin = () => {
           </form>
 
           <div className="mt-8 text-center">
-            <Link to="/" className="text-xs text-gold-500 dark:text-gold-400 hover:text-gold-700 dark:hover:text-gold-300">بازگشت به سایت</Link>
+            <Link to="/" className="text-xs text-[#9a7a24] dark:text-[#c9a84c] hover:text-[#5c4814] dark:hover:text-[#e8c84a]">بازگشت به سایت</Link>
           </div>
         </div>
       </div>
