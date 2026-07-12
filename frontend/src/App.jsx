@@ -42,7 +42,7 @@ function App() {
       <CartProvider>
         <AdminProvider>
           <AuthProvider>
-            <div className="min-h-screen bg-cream dark:bg-[#1A1814] text-gold-900 dark:text-[#F0EBE0] font-sans overflow-x-hidden">
+            <div className="min-h-screen bg-cream dark:bg-[#141A16] text-gold-900 dark:text-[#F0EBE0] font-sans overflow-x-hidden">
               <Navbar
                 setIsMegaMenuOpen={setIsMegaMenuOpen}
                 isMegaMenuOpen={isMegaMenuOpen}

@@ -76,8 +76,8 @@ const Home = () => {
   return (
     <div className="pt-20">
       {/* HERO - Parallax with floating leaves */}
-      <div ref={heroRef} className="relative h-[92vh] flex items-center justify-center overflow-hidden bg-[#1a1814]">
-        <div className="absolute inset-0 bg-[radial-gradient(#c9a84c_0.6px,transparent_1px)] bg-[length:6px_6px] opacity-20"></div>
+      <div ref={heroRef} className="relative h-[92vh] flex items-center justify-center overflow-hidden bg-[#141A16]">
+        <div className="absolute inset-0 bg-[radial-gradient(#C9A84C_0.6px,transparent_1px)] bg-[length:6px_6px] opacity-20"></div>
 
         <motion.div className="absolute inset-0 will-change-transform" style={{ y: heroY, opacity: heroOpacity }}>
           <img src={content.heroImage} alt="چای جاویدان" className="w-full h-full object-cover" style={{ filter: 'brightness(0.6) saturate(1.1)' }} />
@@ -86,28 +86,31 @@ const Home = () => {
 
         {/* Floating tea leaves */}
         <div className="absolute inset-0 pointer-events-none">
-          <svg className="float-particle absolute top-[15%] left-[10%] w-8 h-8 text-[#c9a84c]/40" viewBox="0 0 24 24" fill="currentColor" style={{ animationDelay: '0s' }}>
+          <svg className="float-particle absolute top-[15%] left-[10%] w-8 h-8 text-[#C9A84C]/40" viewBox="0 0 24 24" fill="currentColor" style={{ animationDelay: '0s' }}>
             <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
           </svg>
-          <svg className="float-particle absolute top-[25%] right-[15%] w-6 h-6 text-[#e8c84a]/30" viewBox="0 0 24 24" fill="currentColor" style={{ animationDelay: '2s' }}>
+          <svg className="float-particle absolute top-[25%] right-[15%] w-6 h-6 text-[#D4B85C]/30" viewBox="0 0 24 24" fill="currentColor" style={{ animationDelay: '2s' }}>
             <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
           </svg>
-          <svg className="float-particle absolute bottom-[30%] left-[20%] w-7 h-7 text-[#1a3a2a]/35" viewBox="0 0 24 24" fill="currentColor" style={{ animationDelay: '4s' }}>
+          <svg className="float-particle absolute bottom-[30%] left-[20%] w-7 h-7 text-[#1B3A2B]/35" viewBox="0 0 24 24" fill="currentColor" style={{ animationDelay: '4s' }}>
             <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
           </svg>
         </div>
 
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl">
-          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.1, duration: 0.6 }} className="flex justify-center mb-4 sm:mb-6">
-            <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-2xl bg-gradient-to-br from-white/80 to-[#f5efe4]/60 border border-[#c9a84c]/30 shadow-xl backdrop-blur-sm overflow-hidden">
-              <img src="/logo.png" alt="چای جاویدان" className="w-full h-full object-contain p-2 relative z-10" />
-            </div>
-          </motion.div>
+          <motion.img
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            src="/logo.png"
+            alt="چای جاویدان"
+            className="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4 sm:mb-6 object-contain drop-shadow-2xl"
+          />
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.6 }} className="flex justify-center mb-4 sm:mb-6">
-            <div className="flex items-center gap-2.5 bg-white/95 backdrop-blur-xl px-5 sm:px-6 py-2 rounded-full border border-[#c9a84c]/40 shadow-lg">
-              <div className="w-2 h-2 rounded-full bg-[#1a3a2a] animate-pulse-soft"></div>
-              <span className="text-xs sm:text-sm font-semibold text-[#5c4814] tracking-wide">از سال ۱۳۷۵</span>
+            <div className="flex items-center gap-2.5 bg-white/95 backdrop-blur-xl px-5 sm:px-6 py-2 rounded-full border border-[#C9A84C]/40 shadow-lg">
+              <div className="w-2 h-2 rounded-full bg-[#1B3A2B] animate-pulse-soft"></div>
+              <span className="text-xs sm:text-sm font-semibold text-[#8B6914] tracking-wide">از سال ۱۳۷۵</span>
             </div>
           </motion.div>
 
@@ -130,7 +133,7 @@ const Home = () => {
               </button>
             </Link>
             <Link to="/about">
-              <button className="btn-outline bg-white/95 text-[#5c4814] border-white/80 hover:bg-white text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-[17px] w-full sm:w-auto shadow-lg">
+              <button className="btn-outline bg-white/95 text-[#8B6914] border-white/80 hover:bg-white text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-[17px] w-full sm:w-auto shadow-lg">
                 داستان ما
               </button>
             </Link>
@@ -145,18 +148,18 @@ const Home = () => {
       {/* STATS - Count-up animation */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 -mt-6 relative z-10">
         <ScrollReveal>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#c9a84c]/30 rounded-3xl overflow-hidden">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#C9A84C]/30 rounded-3xl overflow-hidden">
             {[
               { number: "29+", label: "نوع چای ممتاز" },
               { number: "85+", label: "سال تجربه" },
               { number: "41K", label: "مشتری خوشحال" },
               { number: "100%", label: "کیفیت تضمینی" }
             ].map((stat, idx) => (
-              <div key={idx} className="bg-white dark:bg-[#2A2520] px-4 sm:px-8 py-5 sm:py-7 text-center">
-                <div className="text-2xl sm:text-4xl font-semibold text-[#5c4814] dark:text-[#e8c84a] tracking-tighter">
+              <div key={idx} className="bg-white dark:bg-[#1E2A22] px-4 sm:px-8 py-5 sm:py-7 text-center">
+                <div className="text-2xl sm:text-4xl font-semibold text-[#8B6914] dark:text-[#D4B85C] tracking-tighter">
                   <CountUp end={stat.number} duration={2} />
                 </div>
-                <div className="text-[10px] sm:text-xs tracking-widest text-[#9a7a24] dark:text-[#c9a84c] mt-1">{stat.label}</div>
+                <div className="text-[10px] sm:text-xs tracking-widest text-[#C9A84C] dark:text-[#C9A84C] mt-1">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -167,10 +170,10 @@ const Home = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-16 pb-6">
         <div className="flex items-end justify-between mb-6 sm:mb-8">
           <div>
-            <div className="uppercase tracking-[3px] text-xs text-[#9a7a24] dark:text-[#c9a84c] font-medium">پیشنهاد ما</div>
-            <h2 className="text-3xl sm:section-header text-[#5c4814] dark:text-[#e8c84a]">چای‌های برگزیده</h2>
+            <div className="uppercase tracking-[3px] text-xs text-[#C9A84C] dark:text-[#C9A84C] font-medium">پیشنهاد ما</div>
+            <h2 className="text-3xl sm:section-header text-[#8B6914] dark:text-[#D4B85C]">چای‌های برگزیده</h2>
           </div>
-          <Link to="/shop" className="hidden sm:flex items-center text-sm text-[#9a7a24] dark:text-[#c9a84c] hover:text-[#5c4814] dark:hover:text-[#e8c84a] gap-2 font-medium">
+          <Link to="/shop" className="hidden sm:flex items-center text-sm text-[#C9A84C] dark:text-[#C9A84C] hover:text-[#8B6914] dark:hover:text-[#D4B85C] gap-2 font-medium">
             مشاهده همه <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -188,7 +191,7 @@ const Home = () => {
           ))}
         </div>
 
-        <Link to="/shop" className="sm:hidden flex items-center justify-center text-sm text-[#9a7a24] dark:text-[#c9a84c] mt-6 font-medium gap-2">
+        <Link to="/shop" className="sm:hidden flex items-center justify-center text-sm text-[#C9A84C] dark:text-[#C9A84C] mt-6 font-medium gap-2">
           مشاهده همه محصولات <ArrowRight className="w-4 h-4" />
         </Link>
       </div>
@@ -201,8 +204,8 @@ const Home = () => {
             <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%)' }}></div>
             <div className="absolute bottom-0 p-8 sm:p-12 text-white">
               <div className="flex items-center gap-2 mb-2">
-                <Leaf className="w-5 h-5 sm:w-6 sm:h-6 text-[#e8c84a]" />
-                <span className="uppercase tracking-widest text-xs sm:text-sm font-medium text-[#e8c84a]">چای ایرانی</span>
+                <Leaf className="w-5 h-5 sm:w-6 sm:h-6 text-[#D4B85C]" />
+                <span className="uppercase tracking-widest text-xs sm:text-sm font-medium text-[#D4B85C]">چای ایرانی</span>
               </div>
               <div className="text-4xl sm:text-6xl font-semibold tracking-tighter mb-2">گیلان</div>
               <p className="text-white/90 text-sm sm:text-lg mt-2 max-w-lg">چای سیاه و سبز ممتاز از بهترین باغات استان گیلان</p>
@@ -213,12 +216,12 @@ const Home = () => {
       </div>
 
       {/* WHY US */}
-      <div className="bg-white dark:bg-[#2A2520] py-16 sm:py-20">
+      <div className="bg-white dark:bg-[#1E2A22] py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <ScrollReveal>
             <div className="text-center mb-10 sm:mb-12">
-              <div className="text-[#9a7a24] dark:text-[#c9a84c] text-xs tracking-[4px]">چرا چای جاویدان؟</div>
-              <h2 className="text-3xl sm:text-4xl tracking-tight mt-1.5 text-[#5c4814] dark:text-[#e8c84a]">تجربه‌ای متفاوت</h2>
+              <div className="text-[#C9A84C] dark:text-[#C9A84C] text-xs tracking-[4px]">چرا چای جاویدان؟</div>
+              <h2 className="text-3xl sm:text-4xl tracking-tight mt-1.5 text-[#8B6914] dark:text-[#D4B85C]">تجربه‌ای متفاوت</h2>
             </div>
           </ScrollReveal>
 
@@ -229,12 +232,12 @@ const Home = () => {
               { icon: Users, title: "ارتباط مستقیم", desc: "از کشاورزان تا فنجان شما" }
             ].map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.15}>
-                <div className="bg-[#f5efe4] dark:bg-[#1A1814] p-6 sm:p-8 rounded-3xl border border-[#c9a84c]/20 dark:border-[#3D3630] h-full">
-                  <div className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center rounded-2xl bg-white dark:bg-[#2A2520] border border-[#c9a84c]/20 dark:border-[#3D3630] mb-5 sm:mb-6">
-                    <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#1a3a2a]" />
+                <div className="bg-[#FAF7F0] dark:bg-[#141A16] p-6 sm:p-8 rounded-3xl border border-[#C9A84C]/20 dark:border-[#2D3D32] h-full">
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center rounded-2xl bg-white dark:bg-[#1E2A22] border border-[#C9A84C]/20 dark:border-[#2D3D32] mb-5 sm:mb-6">
+                    <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#1B3A2B]" />
                   </div>
-                  <div className="text-lg sm:text-xl font-semibold tracking-tight text-[#5c4814] dark:text-[#e8c84a] mb-2">{item.title}</div>
-                  <p className="text-xs sm:text-sm text-[#9a7a24] dark:text-[#c9a84c] leading-relaxed">{item.desc}</p>
+                  <div className="text-lg sm:text-xl font-semibold tracking-tight text-[#8B6914] dark:text-[#D4B85C] mb-2">{item.title}</div>
+                  <p className="text-xs sm:text-sm text-[#C9A84C] dark:text-[#C9A84C] leading-relaxed">{item.desc}</p>
                 </div>
               </ScrollReveal>
             ))}

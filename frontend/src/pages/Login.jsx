@@ -41,7 +41,7 @@ const Login = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
         >
-          <div className="bg-white dark:bg-[#2A2520] rounded-3xl p-8 border border-gold-100 dark:border-[#3D3630] shadow-sm">
+          <div className="bg-white dark:bg-[#1E2A22] rounded-3xl p-8 border border-gold-100 dark:border-[#2D3D32] shadow-sm">
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label className="text-xs text-gold-700 dark:text-gold-400 font-medium mb-1.5 block">ایمیل یا شماره موبایل</label>

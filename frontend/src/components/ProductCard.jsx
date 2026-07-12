@@ -29,7 +29,7 @@ const ProductCard = ({ product }) => {
           
           <button 
             onClick={handleAddToCart}
-            className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-all bg-white dark:bg-[#2A2520] shadow px-3 py-1.5 rounded-2xl flex items-center gap-1.5 text-xs font-medium text-gold-800 dark:text-gold-300 hover:bg-gold-50 dark:hover:bg-gold-950"
+            className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-all bg-white dark:bg-[#1E2A22] shadow px-3 py-1.5 rounded-2xl flex items-center gap-1.5 text-xs font-medium text-gold-800 dark:text-gold-300 hover:bg-gold-50 dark:hover:bg-gold-950"
           >
             <ShoppingCart className="w-3.5 h-3.5" />
             افزودن

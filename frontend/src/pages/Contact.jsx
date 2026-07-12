@@ -69,7 +69,7 @@ const Contact = () => {
         </div>
 
         {/* Form */}
-        <div className="md:col-span-3 bg-white dark:bg-[#2A2520] p-6 sm:p-8 rounded-3xl border border-gold-100 dark:border-[#3D3630]">
+        <div className="md:col-span-3 bg-white dark:bg-[#1E2A22] p-6 sm:p-8 rounded-3xl border border-gold-100 dark:border-[#2D3D32]">
           {!submitted ? (
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>

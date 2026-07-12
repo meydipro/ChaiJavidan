@@ -26,7 +26,7 @@ const Cart = () => {
           <div className="space-y-5">
             {cart.map(item => (
               <div key={item.id} className="card flex gap-5 p-5">
-                <div className="w-[88px] h-[88px] flex-shrink-0 rounded-2xl overflow-hidden border border-gold-100 dark:border-[#3D3630]">
+                <div className="w-[88px] h-[88px] flex-shrink-0 rounded-2xl overflow-hidden border border-gold-100 dark:border-[#2D3D32]">
                   <img src={item.image} alt="" className="w-full h-full object-cover" />
                 </div>
                 <div className="flex-1 pt-1">
@@ -39,7 +39,7 @@ const Cart = () => {
                   </div>
                   <div className="text-sm font-medium mt-3">{(item.price * item.quantity).toLocaleString('fa-IR')} تومان</div>
                   
-                  <div className="mt-4 flex items-center gap-px bg-gold-50 dark:bg-gold-950 border border-gold-200 dark:border-[#3D3630] rounded-full w-fit text-sm">
+                  <div className="mt-4 flex items-center gap-px bg-gold-50 dark:bg-gold-950 border border-gold-200 dark:border-[#2D3D32] rounded-full w-fit text-sm">
                     <button onClick={() => updateQuantity(item.id, item.quantity - 1)} className="px-3 py-1 text-gold-600 dark:text-gold-400">-</button>
                     <span className="px-4 font-medium">{item.quantity}</span>
                     <button onClick={() => updateQuantity(item.id, item.quantity + 1)} className="px-3 py-1 text-gold-600 dark:text-gold-400">+</button>
@@ -55,7 +55,7 @@ const Cart = () => {
           <div className="admin-card">
             <div className="font-medium text-lg mb-6">خلاصه سفارش</div>
             
-            <div className="space-y-2 text-sm pb-4 border-b border-gold-100 dark:border-[#3D3630]">
+            <div className="space-y-2 text-sm pb-4 border-b border-gold-100 dark:border-[#2D3D32]">
               <div className="flex justify-between">
                 <span>جمع محصولات</span> 
                 <span>{cartTotal.toLocaleString('fa-IR')} تومان</span>

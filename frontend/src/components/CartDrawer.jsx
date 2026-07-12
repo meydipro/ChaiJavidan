@@ -17,8 +17,8 @@ const CartDrawer = ({ isOpen, setIsOpen }) => {
       />
       
       {/* Drawer */}
-      <div className="ml-auto w-full max-w-md bg-white dark:bg-[#2A2520] h-full shadow-2xl flex flex-col relative">
-        <div className="flex items-center justify-between px-6 py-6 border-b dark:border-[#3D3630]">
+      <div className="ml-auto w-full max-w-md bg-white dark:bg-[#1E2A22] h-full shadow-2xl flex flex-col relative">
+        <div className="flex items-center justify-between px-6 py-6 border-b dark:border-[#2D3D32]">
           <div>
             <div className="text-xl text-gold-800 dark:text-gold-300 font-bold">سبد خرید</div>
             <div className="text-xs text-gold-500 dark:text-gold-400">{cart.length} مورد</div>
@@ -33,7 +33,7 @@ const CartDrawer = ({ isOpen, setIsOpen }) => {
             <div className="flex-1 overflow-auto px-6 py-4 space-y-6">
               {cart.map(item => (
                 <div key={item.id} className="flex gap-4">
-                  <div className="w-20 h-20 bg-gold-50 dark:bg-gold-950/30 rounded-2xl overflow-hidden flex-shrink-0 border border-gold-100 dark:border-[#3D3630]">
+                  <div className="w-20 h-20 bg-gold-50 dark:bg-gold-950/30 rounded-2xl overflow-hidden flex-shrink-0 border border-gold-100 dark:border-[#2D3D32]">
                     <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
                   </div>
                   
@@ -50,7 +50,7 @@ const CartDrawer = ({ isOpen, setIsOpen }) => {
                     <div className="flex items-center justify-between mt-3">
                       <div className="font-medium text-sm">{(item.price * item.quantity).toLocaleString('fa-IR')} تومان</div>
                       
-                      <div className="flex items-center gap-1 border border-gold-200 dark:border-[#3D3630] rounded-full px-1 py-px">
+                      <div className="flex items-center gap-1 border border-gold-200 dark:border-[#2D3D32] rounded-full px-1 py-px">
                         <button onClick={() => updateQuantity(item.id, item.quantity - 1)} className="p-1">
                           <Minus className="w-3 h-3" />
                         </button>
@@ -65,7 +65,7 @@ const CartDrawer = ({ isOpen, setIsOpen }) => {
               ))}
             </div>
 
-            <div className="border-t dark:border-[#3D3630] px-6 py-6">
+            <div className="border-t dark:border-[#2D3D32] px-6 py-6">
               <div className="flex justify-between items-baseline mb-4 text-sm">
                 <span className="text-gold-600 dark:text-gold-400">جمع کل</span>
                 <span className="font-semibold text-xl">{cartTotal.toLocaleString('fa-IR')} تومان</span>

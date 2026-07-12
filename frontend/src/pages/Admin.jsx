@@ -180,7 +180,7 @@ const Admin = () => {
             <div className="font-medium">{user?.name || user?.email}</div>
             <div className="text-xs text-gold-600 dark:text-gold-400">مدیر</div>
           </div>
-          <button onClick={logout} className="flex items-center gap-2 px-4 py-2 text-sm border border-gold-200 dark:border-[#3D3630] hover:bg-red-50 hover:border-red-200 text-red-600 rounded-2xl">
+          <button onClick={logout} className="flex items-center gap-2 px-4 py-2 text-sm border border-gold-200 dark:border-[#2D3D32] hover:bg-red-50 hover:border-red-200 text-red-600 rounded-2xl">
             <LogOut className="w-4 h-4" /> خروج
           </button>
         </div>
@@ -243,14 +243,14 @@ const Admin = () => {
                 <div className="col-span-2">
                   <label className="text-xs text-gold-600 dark:text-gold-400 block mb-2">یا آپلود تصویر</label>
                   <div className="flex items-center gap-3">
-                    <label className="flex items-center gap-2 px-4 py-2 text-sm border border-gold-200 dark:border-[#3D3630] rounded-xl hover:bg-gold-50 dark:hover:bg-gold-950 cursor-pointer transition">
+                    <label className="flex items-center gap-2 px-4 py-2 text-sm border border-gold-200 dark:border-[#2D3D32] rounded-xl hover:bg-gold-50 dark:hover:bg-gold-950 cursor-pointer transition">
                       <Upload className="w-4 h-4" />
                       انتخاب فایل
                       <input type="file" accept="image/*" onChange={e => handleImageUpload(e, !!editingProduct)} className="hidden" />
                     </label>
                     {(editingProduct?.image || newProduct.image) && (
                       <div className="flex items-center gap-2">
-                        <img src={editingProduct?.image || newProduct.image} alt="پیش‌نمایش" className="w-16 h-16 object-cover rounded-xl border border-gold-200 dark:border-[#3D3630]" />
+                        <img src={editingProduct?.image || newProduct.image} alt="پیش‌نمایش" className="w-16 h-16 object-cover rounded-xl border border-gold-200 dark:border-[#2D3D32]" />
                         <button onClick={() => handleRemoveImage(!!editingProduct)} className="text-red-400 hover:text-red-500 p-1">
                           <X className="w-4 h-4" />
                         </button>
@@ -284,7 +284,7 @@ const Admin = () => {
                 </thead>
                 <tbody>
                   {products.map(prod => (
-                    <tr key={prod.id} className="border-b border-gold-100 dark:border-[#3D3630] last:border-0">
+                    <tr key={prod.id} className="border-b border-gold-100 dark:border-[#2D3D32] last:border-0">
                       <td className="py-4 pr-3 font-medium">{prod.name}</td>
                       <td>{prod.price?.toLocaleString('fa-IR')}</td>
                       <td><span className="px-3 py-0.5 bg-gold-100 dark:bg-gold-950 text-gold-700 dark:text-gold-400 rounded text-xs">{prod.region}</span></td>
@@ -326,7 +326,7 @@ const Admin = () => {
                 <label className="text-xs text-gold-600 dark:text-gold-400 block mb-1">تصویر هیرو</label>
                 <div className="flex items-center gap-3">
                   <input value={editingContent.heroImage || ''} onChange={e => setEditingContent({...editingContent, heroImage: e.target.value})} className="w-full" placeholder="URL تصویر" />
-                  <label className="flex items-center gap-2 px-4 py-2 text-sm border border-gold-200 dark:border-[#3D3630] rounded-xl hover:bg-gold-50 dark:hover:bg-gold-950 cursor-pointer transition shrink-0">
+                  <label className="flex items-center gap-2 px-4 py-2 text-sm border border-gold-200 dark:border-[#2D3D32] rounded-xl hover:bg-gold-50 dark:hover:bg-gold-950 cursor-pointer transition shrink-0">
                     <Upload className="w-4 h-4" />
                     <input type="file" accept="image/*" onChange={async (e) => {
                       const file = e.target.files[0];
@@ -344,7 +344,7 @@ const Admin = () => {
                   </label>
                 </div>
                 {editingContent.heroImage && (
-                  <img src={editingContent.heroImage} alt="پیش‌نمایش" className="mt-3 w-full h-40 object-cover rounded-xl border border-gold-200 dark:border-[#3D3630]" />
+                  <img src={editingContent.heroImage} alt="پیش‌نمایش" className="mt-3 w-full h-40 object-cover rounded-xl border border-gold-200 dark:border-[#2D3D32]" />
                 )}
               </div>
             </div>
@@ -366,7 +366,7 @@ const Admin = () => {
                 <label className="text-xs text-gold-600 dark:text-gold-400 block mb-1">تصویر درباره ما</label>
                 <div className="flex items-center gap-3">
                   <input value={editingContent.aboutImage || ''} onChange={e => setEditingContent({...editingContent, aboutImage: e.target.value})} className="w-full" placeholder="URL تصویر" />
-                  <label className="flex items-center gap-2 px-4 py-2 text-sm border border-gold-200 dark:border-[#3D3630] rounded-xl hover:bg-gold-50 dark:hover:bg-gold-950 cursor-pointer transition shrink-0">
+                  <label className="flex items-center gap-2 px-4 py-2 text-sm border border-gold-200 dark:border-[#2D3D32] rounded-xl hover:bg-gold-50 dark:hover:bg-gold-950 cursor-pointer transition shrink-0">
                     <Upload className="w-4 h-4" />
                     <input type="file" accept="image/*" onChange={async (e) => {
                       const file = e.target.files[0];
@@ -450,7 +450,7 @@ const Admin = () => {
           ) : (
             <div className="admin-card">
               {orders.map(order => (
-                <div key={order.id} className="border-b border-gold-100 dark:border-[#3D3630] py-4 last:border-none flex justify-between items-center">
+                <div key={order.id} className="border-b border-gold-100 dark:border-[#2D3D32] py-4 last:border-none flex justify-between items-center">
                   <div>
                     <div className="font-medium">{order.name || 'مشتری'}</div>
                     <div className="text-xs text-gold-500 dark:text-gold-400">{new Date(order.date).toLocaleDateString('fa-IR')}</div>

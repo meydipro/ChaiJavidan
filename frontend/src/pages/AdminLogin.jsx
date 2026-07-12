@@ -24,23 +24,21 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#f5efe4] dark:bg-[#1A1814] flex items-center justify-center pt-12">
+    <div className="min-h-screen bg-[#FAF7F0] dark:bg-[#141A16] flex items-center justify-center pt-12">
       <div className="max-w-md w-full mx-auto px-6">
         <div className="text-center mb-9">
           <div className="flex justify-center mb-6">
-            <div className="relative w-16 h-16 bg-gradient-to-br from-white/80 to-[#f5efe4]/60 border border-[#c9a84c]/30 shadow-md overflow-hidden">
-              <img src="/logo.png" className="w-full h-full object-contain p-1 relative z-10" alt="" />
-            </div>
+            <img src="/logo.png" className="w-14 h-14 rounded-xl object-cover" alt="لوگو" />
           </div>
-          <div className="font-amiri text-4xl tracking-tight text-[#5c4814] dark:text-[#e8c84a] font-bold">چای جاویدان</div>
-          <p className="text-sm text-[#9a7a24] dark:text-[#c9a84c] mt-1">پنل مدیریت</p>
+          <div className="font-amiri text-4xl tracking-tight text-[#8B6914] dark:text-[#D4B85C] font-bold">چای جاویدان</div>
+          <p className="text-sm text-[#C9A84C] dark:text-[#D4B85C] mt-1">پنل مدیریت</p>
         </div>
 
         <div className="admin-card">
           <form onSubmit={handleLogin}>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm text-[#9a7a24] dark:text-[#c9a84c] mb-1.5">ایمیل</label>
+                <label className="block text-sm text-[#C9A84C] dark:text-[#c9a84c] mb-1.5">ایمیل</label>
                 <input 
                   type="email" 
                   value={email} 
@@ -50,7 +48,7 @@ const AdminLogin = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm text-[#9a7a24] dark:text-[#c9a84c] mb-1.5">رمز عبور</label>
+                <label className="block text-sm text-[#C9A84C] dark:text-[#c9a84c] mb-1.5">رمز عبور</label>
                 <input 
                   type="password" 
                   value={password} 
@@ -71,7 +69,7 @@ const AdminLogin = () => {
           </form>
 
           <div className="mt-8 text-center">
-            <Link to="/" className="text-xs text-[#9a7a24] dark:text-[#c9a84c] hover:text-[#5c4814] dark:hover:text-[#e8c84a]">بازگشت به سایت</Link>
+            <Link to="/" className="text-xs text-[#C9A84C] dark:text-[#c9a84c] hover:text-[#8B6914] dark:hover:text-[#D4B85C]">بازگشت به سایت</Link>
           </div>
         </div>
       </div>

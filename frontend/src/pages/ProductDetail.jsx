@@ -55,14 +55,14 @@ const ProductDetail = () => {
       <div className="grid md:grid-cols-2 gap-14">
         {/* Image */}
         <div className="relative">
-          <div className="aspect-square rounded-3xl overflow-hidden bg-white dark:bg-[#2A2520] shadow-inner border border-gold-100 dark:border-[#3D3630]">
+          <div className="aspect-square rounded-3xl overflow-hidden bg-white dark:bg-[#1E2A22] shadow-inner border border-gold-100 dark:border-[#2D3D32]">
             <img 
               src={product.image} 
               alt={product.name} 
               className="w-full h-full object-cover" 
             />
           </div>
-          <div className="absolute top-5 right-5 px-4 py-1 text-sm bg-white dark:bg-[#2A2520] rounded-2xl border border-gold-100 dark:border-[#3D3630] shadow-sm">
+          <div className="absolute top-5 right-5 px-4 py-1 text-sm bg-white dark:bg-[#1E2A22] rounded-2xl border border-gold-100 dark:border-[#2D3D32] shadow-sm">
             {product.region}
           </div>
         </div>
@@ -99,7 +99,7 @@ const ProductDetail = () => {
           </div>
 
           <div className="mt-8 flex items-center gap-4">
-            <div className="flex items-center border border-gold-200 dark:border-[#3D3630] rounded-2xl overflow-hidden">
+            <div className="flex items-center border border-gold-200 dark:border-[#2D3D32] rounded-2xl overflow-hidden">
               <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="px-4 py-3 hover:bg-gold-50">-</button>
               <div className="px-6 font-medium">{quantity}</div>
               <button onClick={() => setQuantity(quantity + 1)} className="px-4 py-3 hover:bg-gold-50">+</button>
@@ -118,7 +118,7 @@ const ProductDetail = () => {
             <div>۷ روز گارانتی بازگشت</div>
           </div>
 
-          <div className="mt-10 pt-6 border-t border-gold-100 dark:border-[#3D3630] text-xs leading-relaxed text-gold-600 dark:text-gold-400">
+          <div className="mt-10 pt-6 border-t border-gold-100 dark:border-[#2D3D32] text-xs leading-relaxed text-gold-600 dark:text-gold-400">
             این محصول از مزارع {product.region} تهیه شده و پس از کنترل دقیق کیفیت، بسته‌بندی و ارسال می‌شود.
           </div>
         </div>

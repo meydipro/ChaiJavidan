@@ -28,39 +28,39 @@ h1, h2, h3 {
 }
 
 :root {
-  --gold: #c9a84c;
+  --gold: #C9A84C;
   --gold-rgb: 201, 168, 76;
-  --gold-dark: #b8922e;
-  --gold-light: #e8c84a;
-  --gold-shine: #e8c84a;
-  --tea-green: #1a3a2a;
-  --terracotta: #a0623a;
-  --cream: #f5efe4;
-  --cream-dark: #e8dfd0;
-  --text: #2D2A24;
+  --gold-dark: #8B6914;
+  --gold-light: #E8D48A;
+  --gold-shine: #D4B85C;
+  --tea-green: #1B3A2B;
+  --terracotta: #6B4F1A;
+  --cream: #FAF7F0;
+  --cream-dark: #F0EBE0;
+  --text: #1A1A1A;
   --text-light: #6B6353;
-  --bg: #f5efe4;
-  --border: #ddd4c4;
-  --shadow: 0 10px 30px -15px rgba(201, 168, 76, 0.3);
+  --bg: #FAF7F0;
+  --border: #D4C9A8;
+  --shadow: 0 10px 30px -15px rgba(27, 58, 43, 0.25);
   --card-bg: #FFFFFF;
 }
 
 .dark {
-  --gold: #e8c84a;
-  --gold-rgb: 232, 200, 74;
-  --gold-dark: #c9a84c;
-  --gold-light: #f0d860;
-  --gold-shine: #f0d860;
-  --tea-green: #2d5e42;
-  --terracotta: #c07a4a;
-  --cream: #1a1814;
-  --cream-dark: #2a2520;
-  --text: #f0ebe0;
-  --text-light: #a09882;
-  --bg: #1a1814;
-  --border: #3d3630;
+  --gold: #D4B85C;
+  --gold-rgb: 212, 184, 92;
+  --gold-dark: #C9A84C;
+  --gold-light: #E8D48A;
+  --gold-shine: #E8D48A;
+  --tea-green: #2D5E42;
+  --terracotta: #8B6914;
+  --cream: #141A16;
+  --cream-dark: #1E2A22;
+  --text: #F0EBE0;
+  --text-light: #A09882;
+  --bg: #141A16;
+  --border: #2D3D32;
   --shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
-  --card-bg: #2a2520;
+  --card-bg: #1E2A22;
 }
 
 body {
@@ -108,7 +108,7 @@ body {
               box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 .dark .card {
-  @apply bg-[#2A2520] border-[#3D3630];
+  @apply bg-[#1E2A22] border-[#2D3D32];
 }
 
 .card:hover {
@@ -181,7 +181,7 @@ a:hover .icon {
   @apply bg-white rounded-3xl p-6 border border-gold-100 shadow-sm;
 }
 .dark .admin-card {
-  @apply bg-[#2A2520] border-[#3D3630];
+  @apply bg-[#1E2A22] border-[#2D3D32];
 }
 
 /* Modal - iOS style */
@@ -213,7 +213,7 @@ a:hover .icon {
   height: 2px;
   bottom: -2px;
   left: 0;
-  background: linear-gradient(to right, #e8c84a, #c9a84c, #b8922e);
+  background: linear-gradient(to right, #D4B85C, #C9A84C, #8B6914);
   transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -223,8 +223,8 @@ a:hover .icon {
 
 /* Golden accents */
 .gold-text {
-  color: #b8922e;
-  background: linear-gradient(135deg, #e8c84a, #c9a84c, #b8922e);
+  color: #8B6914;
+  background: linear-gradient(135deg, #D4B85C, #C9A84C, #8B6914);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -249,7 +249,7 @@ a:hover .icon {
   height: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #e8c84a, #c9a84c);
+  background: linear-gradient(180deg, #D4B85C, #C9A84C);
   border-radius: 20px;
 }
 
@@ -273,7 +273,7 @@ input, textarea, select {
   @apply bg-white border border-gold-200 focus:border-gold-500 focus:ring-1 focus:ring-gold-400 outline-none transition-all rounded-2xl px-5 py-3 text-sm;
 }
 .dark input, .dark textarea, .dark select {
-  @apply bg-[#2A2520] border-[#3D3630] text-[#F0EBE0];
+  @apply bg-[#1E2A22] border-[#2D3D32] text-[#F0EBE0];
 }
 
 /* Toast */
@@ -281,17 +281,17 @@ input, textarea, select {
   @apply bg-white shadow-xl border border-gold-200 rounded-2xl px-5 py-3.5 text-sm font-medium;
 }
 .dark .toast {
-  @apply bg-[#2A2520] border-[#3D3630] text-[#F0EBE0];
+  @apply bg-[#1E2A22] border-[#2D3D32] text-[#F0EBE0];
 }
 
 /* Skeleton shimmer */
 .skeleton {
-  background: linear-gradient(90deg, #f0ebe0 25%, #faf7f0 50%, #f0ebe0 75%);
+  background: linear-gradient(90deg, #F0EBE0 25%, #FAF7F0 50%, #F0EBE0 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s ease-in-out infinite;
 }
 .dark .skeleton {
-  background: linear-gradient(90deg, #2A2520 25%, #3D3630 50%, #2A2520 75%);
+  background: linear-gradient(90deg, #1E2A22 25%, #2D3D32 50%, #1E2A22 75%);
   background-size: 200% 100%;
 }
 
@@ -453,13 +453,13 @@ input:focus, textarea:focus, select:focus {
 
 /* Step indicator */
 .step-active {
-  background: linear-gradient(135deg, #e8c84a, #c9a84c);
+  background: linear-gradient(135deg, #D4B85C, #C9A84C);
   color: white;
   box-shadow: 0 4px 12px -3px rgba(var(--gold-rgb), 0.4);
 }
 
 .step-complete {
-  background: #1a3a2a;
+  background: #1B3A2B;
   color: white;
   box-shadow: 0 4px 12px -3px rgba(26, 58, 42, 0.4);
 }
@@ -469,6 +469,6 @@ input:focus, textarea:focus, select:focus {
   color: var(--gold-dark);
 }
 .dark .step-inactive {
-  background: #3D3630;
+  background: #2D3D32;
   color: var(--gold);
 }

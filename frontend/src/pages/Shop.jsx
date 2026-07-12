@@ -106,7 +106,7 @@ const Shop = ({ searchQuery: propSearchQuery }) => {
             <select 
               value={sortBy} 
               onChange={(e) => setSortBy(e.target.value)}
-              className="bg-white dark:bg-[#2A2520] dark:text-[#F0EBE0] border border-gold-200 dark:border-[#3D3630] rounded-2xl px-4 py-2 text-sm focus:outline-none"
+              className="bg-white dark:bg-[#1E2A22] dark:text-[#F0EBE0] border border-gold-200 dark:border-[#2D3D32] rounded-2xl px-4 py-2 text-sm focus:outline-none"
             >
               <option value="featured">پیشنهاد ویژه</option>
               <option value="price-low">ارزان‌ترین</option>
@@ -134,7 +134,7 @@ const Shop = ({ searchQuery: propSearchQuery }) => {
             </button>
           ))}
 
-          <div className="w-px h-8 bg-gold-100 dark:bg-[#3D3630] mx-1.5 self-center"></div>
+          <div className="w-px h-8 bg-gold-100 dark:bg-[#2D3D32] mx-1.5 self-center"></div>
 
           <button 
             onClick={() => setActiveCategory('all')}
@@ -155,7 +155,7 @@ const Shop = ({ searchQuery: propSearchQuery }) => {
           {(activeRegion !== 'all' || activeCategory !== 'all' || searchQuery) && (
             <button
               onClick={() => { resetFilters(); if (searchQuery) setSearchParams({}); }}
-              className="flex items-center gap-1.5 px-4 py-2 text-xs text-gold-600 dark:text-gold-400 border border-gold-200 dark:border-[#3D3630] hover:bg-gold-50 dark:hover:bg-gold-950 rounded-2xl"
+              className="flex items-center gap-1.5 px-4 py-2 text-xs text-gold-600 dark:text-gold-400 border border-gold-200 dark:border-[#2D3D32] hover:bg-gold-50 dark:hover:bg-gold-950 rounded-2xl"
             >
               <X className="w-3.5 h-3.5" /> {searchQuery ? 'پاک کردن جستجو' : 'پاک کردن فیلترها'}
             </button>

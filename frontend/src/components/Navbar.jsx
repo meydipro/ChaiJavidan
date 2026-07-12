@@ -56,13 +56,11 @@ const Navbar = ({ setIsMegaMenuOpen, isMegaMenuOpen, setIsCartOpen, searchQuery,
       <nav className={`mx-auto max-w-7xl rounded-2xl transition-all duration-500 navbar-glass ${scrolled ? 'navbar-scrolled !h-14' : 'h-[72px]'}`}>
         <div className="flex items-center justify-between h-full px-5">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 group shrink-0">
-            <div className="relative w-11 h-11 rounded-xl bg-gradient-to-br from-white/80 to-[#f5efe4]/60 border border-[#c9a84c]/30 shadow-sm backdrop-blur-sm overflow-hidden">
-              <img src="/logo.png" alt="چای جاویدان" className="w-full h-full object-contain p-1 relative z-10" />
-            </div>
+          <Link to="/" className="flex items-center gap-2 group shrink-0">
+            <img src="/logo.png" alt="چای جاویدان" className="w-9 h-9 rounded-lg object-cover" />
             <div className="hidden sm:block">
-              <div className="font-amiri text-lg tracking-tight text-[#5c4814] dark:text-[#e8c84a] font-bold leading-tight">چای جاویدان</div>
-              <div className="text-[8px] text-[#9a7a24] dark:text-[#c9a84c] tracking-[3px] font-medium">CHAI JAVIDAN</div>
+              <div className="font-amiri text-lg tracking-tight text-[#8B6914] dark:text-[#D4B85C] font-bold leading-tight">چای جاویدان</div>
+              <div className="text-[8px] text-[#C9A84C] dark:text-[#D4B85C] tracking-[3px] font-medium">CHAI JAVIDAN</div>
             </div>
           </Link>
 
@@ -87,7 +85,7 @@ const Navbar = ({ setIsMegaMenuOpen, isMegaMenuOpen, setIsCartOpen, searchQuery,
                 >
                   <Search className="w-[18px] h-[18px]" />
                 </button>
-                <div className={`flex items-center bg-white/60 dark:bg-[#2A2520]/60 border border-gold-200/60 dark:border-[#3D3630]/60 focus-within:border-gold-400/80 focus-within:bg-white/80 dark:focus-within:bg-[#2A2520]/80 rounded-xl h-10 transition-all duration-300 ${searchExpanded ? 'w-full ml-2 opacity-100' : 'w-0 opacity-0'}`}>
+                <div className={`flex items-center bg-white/60 dark:bg-[#1E2A22]/60 border border-gold-200/60 dark:border-[#2D3D32]/60 focus-within:border-gold-400/80 focus-within:bg-white/80 dark:focus-within:bg-[#1E2A22]/80 rounded-xl h-10 transition-all duration-300 ${searchExpanded ? 'w-full ml-2 opacity-100' : 'w-0 opacity-0'}`}>
                   <input
                     ref={searchInputRef}
                     type="text"
@@ -124,13 +122,13 @@ const Navbar = ({ setIsMegaMenuOpen, isMegaMenuOpen, setIsCartOpen, searchQuery,
             <div className="relative">
               {isAuthenticated ? (
                 <button onClick={() => setShowUserMenu(!showUserMenu)}
-                  className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium border border-gold-200/60 dark:border-[#3D3630]/60 hover:bg-gold-50/50 dark:hover:bg-gold-950/50 text-gold-700 dark:text-gold-300 transition-all">
+                  className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium border border-gold-200/60 dark:border-[#2D3D32]/60 hover:bg-gold-50/50 dark:hover:bg-gold-950/50 text-gold-700 dark:text-gold-300 transition-all">
                   <User className="w-4 h-4" />
                   <span className="hidden sm:inline">{user?.name}</span>
                 </button>
               ) : (
                 <Link to="/login"
-                  className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium border border-gold-200/60 dark:border-[#3D3630]/60 hover:bg-gold-50/50 dark:hover:bg-gold-950/50 text-gold-700 dark:text-gold-300 transition-all">
+                  className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium border border-gold-200/60 dark:border-[#2D3D32]/60 hover:bg-gold-50/50 dark:hover:bg-gold-950/50 text-gold-700 dark:text-gold-300 transition-all">
                   <LogIn className="w-4 h-4" />
                   <span className="hidden sm:inline">ورود</span>
                 </Link>
@@ -144,7 +142,7 @@ const Navbar = ({ setIsMegaMenuOpen, isMegaMenuOpen, setIsCartOpen, searchQuery,
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 8, scale: 0.95 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute left-0 top-full mt-2 w-48 bg-white/90 dark:bg-[#2A2520]/90 backdrop-blur-xl rounded-2xl border border-gold-100 dark:border-[#3D3630] shadow-xl py-2 z-50"
+                    className="absolute left-0 top-full mt-2 w-48 bg-white/90 dark:bg-[#1E2A22]/90 backdrop-blur-xl rounded-2xl border border-gold-100 dark:border-[#2D3D32] shadow-xl py-2 z-50"
                   >
                     <Link to="/admin" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gold-700 hover:bg-gold-50/50 transition-colors">
                       <User className="w-4 h-4" /> مدیریت

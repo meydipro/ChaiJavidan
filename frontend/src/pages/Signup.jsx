@@ -115,7 +115,7 @@ const Signup = () => {
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="bg-white dark:bg-[#2A2520] rounded-3xl p-8 border border-gold-100 dark:border-[#3D3630] shadow-sm">
+              <div className="bg-white dark:bg-[#1E2A22] rounded-3xl p-8 border border-gold-100 dark:border-[#2D3D32] shadow-sm">
                 <div className="text-center mb-6">
                   <div className="text-sm text-gold-600 dark:text-gold-400">مرحله ۱: اطلاعات شخصی</div>
                 </div>
@@ -210,7 +210,7 @@ const Signup = () => {
               exit={{ opacity: 0, x: 20 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="bg-white dark:bg-[#2A2520] rounded-3xl p-8 border border-gold-100 dark:border-[#3D3630] shadow-sm">
+              <div className="bg-white dark:bg-[#1E2A22] rounded-3xl p-8 border border-gold-100 dark:border-[#2D3D32] shadow-sm">
                 <div className="text-center mb-6">
                   <div className="w-16 h-16 bg-gold-100 dark:bg-gold-950 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Mail className="w-8 h-8 text-gold-600 dark:text-gold-400" />

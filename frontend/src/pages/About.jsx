@@ -64,7 +64,7 @@ const About = () => {
             { icon: MapPin, title: "بوشهر", desc: "چای سبز و سفید ارگانیک" },
             { icon: Users, title: "تیم ما", desc: "بیش از ۸۰ نفر متخصص" }
           ].map((item, i) => (
-            <div key={i} className="p-8 border border-gold-100 dark:border-[#3D3630] bg-white dark:bg-[#2A2520] rounded-3xl">
+            <div key={i} className="p-8 border border-gold-100 dark:border-[#2D3D32] bg-white dark:bg-[#1E2A22] rounded-3xl">
               <div className="w-10 h-10 bg-gold-100 dark:bg-gold-950 text-gold-700 dark:text-gold-400 flex items-center justify-center rounded-2xl mb-7">
                 <item.icon className="w-5 h-5" />
               </div>
