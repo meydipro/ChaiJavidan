@@ -30,7 +30,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="pt-20 max-w-5xl mx-auto px-6 pb-20">
+    <div className="pt-28 max-w-5xl mx-auto px-4 sm:px-6 pb-20">
       <div className="py-12 text-center">
         <div className="text-gold-600 dark:text-gold-400 text-xs tracking-[3.5px]">ارتباط با ما</div>
         <h1 className="section-header">با ما در تماس باشید</h1>

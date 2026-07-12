@@ -29,7 +29,7 @@ const Login = () => {
   };
 
   return (
-    <div className="pt-28 min-h-screen flex items-center justify-center px-6 py-12">
+    <div className="pt-28 min-h-screen flex items-center justify-center px-4 sm:px-6 py-12">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <div className="inline text-xs tracking-[3.5px] bg-gold-100 dark:bg-gold-950 text-gold-700 dark:text-gold-400 px-4 py-1 rounded-full">حساب کاربری</div>

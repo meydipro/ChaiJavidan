@@ -47,12 +47,12 @@ const ProductDetail = () => {
   };
 
   return (
-    <div className="pt-28 max-w-6xl mx-auto px-6 pb-20">
+    <div className="pt-28 max-w-6xl mx-auto px-4 sm:px-6 pb-20">
       <Link to="/shop" className="inline-flex items-center gap-2 text-sm text-gold-700 mt-8 mb-8 hover:text-gold-900">
         <ArrowLeft className="w-4 h-4" /> بازگشت به فروشگاه
       </Link>
 
-      <div className="grid md:grid-cols-2 gap-14">
+      <div className="grid md:grid-cols-2 gap-8 md:gap-14">
         {/* Image */}
         <div className="relative">
           <div className="aspect-square rounded-3xl overflow-hidden bg-white dark:bg-[#1E2A22] shadow-inner border border-gold-100 dark:border-[#2D3D32]">
@@ -71,7 +71,7 @@ const ProductDetail = () => {
         <div className="pt-2">
           <div className="badge mb-3">{product.category}</div>
           
-          <h1 className="text-5xl font-semibold tracking-[-1.6px] leading-none">{product.name}</h1>
+          <h1 className="text-3xl sm:text-5xl font-semibold tracking-[-1.6px] leading-none">{product.name}</h1>
 
           <div className="flex items-center gap-4 mt-5">
             <div className="flex items-baseline">

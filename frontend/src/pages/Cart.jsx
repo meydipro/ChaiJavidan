@@ -18,10 +18,10 @@ const Cart = () => {
   }
 
   return (
-    <div className="pt-28 max-w-4xl mx-auto px-6 pb-16">
+    <div className="pt-28 max-w-4xl mx-auto px-4 sm:px-6 pb-16">
       <h1 className="text-4xl tracking-tight font-semibold mt-8 mb-8">سبد خرید</h1>
 
-      <div className="grid md:grid-cols-5 gap-x-9">
+      <div className="grid md:grid-cols-5 gap-x-6 md:gap-x-9">
         <div className="md:col-span-3">
           <div className="space-y-5">
             {cart.map(item => (

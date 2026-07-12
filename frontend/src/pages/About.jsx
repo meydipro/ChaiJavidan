@@ -20,8 +20,8 @@ const About = () => {
   }, []);
 
   return (
-    <div className="pt-20">
-      <div className="max-w-4xl mx-auto px-6 py-16">
+    <div className="pt-28">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
         <div className="text-center mb-9">
           <div className="inline text-xs tracking-[3.5px] bg-gold-100 dark:bg-gold-950 text-gold-700 dark:text-gold-400 px-4 py-1 rounded-full">از ۱۳۷۵</div>
           <h1 className="section-header mt-4">{content.aboutTitle}</h1>
@@ -57,7 +57,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 pb-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {[
             { icon: MapPin, title: "گیلان", desc: "قلب چای سیاه ایران" },

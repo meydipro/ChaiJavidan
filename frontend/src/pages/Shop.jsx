@@ -88,7 +88,7 @@ const Shop = ({ searchQuery: propSearchQuery }) => {
   };
 
   return (
-    <div className="pt-28 max-w-7xl mx-auto px-6">
+    <div className="pt-28 max-w-7xl mx-auto px-4 sm:px-6">
       <div className="py-12">
         <div className="flex items-center justify-between mb-8">
           <div>

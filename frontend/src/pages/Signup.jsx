@@ -86,7 +86,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="pt-28 min-h-screen flex items-center justify-center px-6 py-12">
+    <div className="pt-28 min-h-screen flex items-center justify-center px-4 sm:px-6 py-12">
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="text-center mb-8">

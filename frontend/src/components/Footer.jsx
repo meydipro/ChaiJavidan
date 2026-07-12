@@ -5,7 +5,7 @@ import { MapPin, Send, Mail } from 'lucide-react';
 const Footer = () => {
   return (
     <footer className="bg-cream-dark dark:bg-[#1E2A22] pt-14 pb-8 border-t border-gold-200/60 dark:border-[#2D3D32]/60">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-y-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-12 gap-y-10">
 
         {/* Brand */}
         <div className="md:col-span-4">
@@ -72,7 +72,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="border-t border-gold-200/50 dark:border-[#2D3D32]/50 mt-12 pt-6 text-xs text-center text-gold-500 dark:text-gold-400 max-w-7xl mx-auto px-6">
+      <div className="border-t border-gold-200/50 dark:border-[#2D3D32]/50 mt-12 pt-6 text-xs text-center text-gold-500 dark:text-gold-400 max-w-7xl mx-auto px-4 sm:px-6">
         © ۱۴۰۵ چای جاویدان. همه حقوق محفوظ است.
         <span className="mx-2">•</span>
         کیفیت که ماندگار است.
