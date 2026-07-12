@@ -48,7 +48,7 @@ const Home = () => {
   const [content, setContent] = useState({
     heroTitle: "چای جاویدان",
     heroSubtitle: "طعم اصیل ایرانی در هر فنجان",
-    aboutText: "از سال ۱۳۷۵، چای جاویدان با عشق و دقت از بهترین مزارع گیلان و بوشهر، چای‌های ممتاز را به شما ارائه می‌دهد.",
+    aboutText: "از سال ۱۳۷۵، چای جاویدان با عشق و دقت از بهترین مزارع گیلان، چای‌های ممتاز را به شما ارائه می‌دهد.",
     heroImage: "https://picsum.photos/id/1018/2000/1200"
   });
 
@@ -64,7 +64,9 @@ const Home = () => {
       } catch (e) {
         setFeaturedProducts([
           { id: 1, name: "چای سیاه ممتاز گیلان", price: 185000, originalPrice: 210000, image: "https://picsum.photos/id/1015/600/600", category: "سیاه", region: "گیلان", rating: 4.8, reviews: 124 },
-          { id: 2, name: "چای سبز ارگانیک بوشهر", price: 165000, image: "https://picsum.photos/id/106/600/600", category: "سبز", region: "بوشهر", rating: 4.6, reviews: 89 }
+          { id: 2, name: "چای سبز ارگانیک گیلان", price: 165000, image: "https://picsum.photos/id/106/600/600", category: "سبز", region: "گیلان", rating: 4.6, reviews: 89 },
+          { id: 3, name: "چای دارچین و هل گیلان", price: 205000, originalPrice: 240000, image: "https://picsum.photos/id/312/600/600", category: "طعم‌دار", region: "گیلان", rating: 4.9, reviews: 156 },
+          { id: 4, name: "چای سبز لاهیجان", price: 195000, image: "https://picsum.photos/id/201/600/600", category: "سبز", region: "گیلان", rating: 4.7, reviews: 98 }
         ]);
       }
     };
@@ -74,12 +76,12 @@ const Home = () => {
   return (
     <div className="pt-20">
       {/* HERO - Parallax with floating leaves */}
-      <div ref={heroRef} className="relative h-[92vh] flex items-center justify-center overflow-hidden bg-[#f5efe4] dark:bg-[#2A2520]">
-        <div className="absolute inset-0 bg-[radial-gradient(#c9a84c_0.6px,transparent_1px)] bg-[length:6px_6px] opacity-30"></div>
+      <div ref={heroRef} className="relative h-[92vh] flex items-center justify-center overflow-hidden bg-[#1a1814]">
+        <div className="absolute inset-0 bg-[radial-gradient(#c9a84c_0.6px,transparent_1px)] bg-[length:6px_6px] opacity-20"></div>
 
-        <motion.div className="absolute inset-0" style={{ y: heroY, opacity: heroOpacity }}>
-          <img src={content.heroImage} alt="چای جاویدان" className="w-full h-full object-cover opacity-75" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#2D2A24]/70 via-[#2D2A24]/50 to-[#2D2A24]/80 dark:from-[#1A1814]/70 dark:via-[#1A1814]/50 dark:to-[#1A1814]/80"></div>
+        <motion.div className="absolute inset-0 will-change-transform" style={{ y: heroY, opacity: heroOpacity }}>
+          <img src={content.heroImage} alt="چای جاویدان" className="w-full h-full object-cover" style={{ filter: 'brightness(0.6) saturate(1.1)' }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(26,24,20,0.5) 0%, rgba(26,24,20,0.3) 40%, rgba(26,24,20,0.7) 100%)' }}></div>
         </motion.div>
 
         {/* Floating tea leaves */}
@@ -97,26 +99,25 @@ const Home = () => {
 
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl">
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.1, duration: 0.6 }} className="flex justify-center mb-4 sm:mb-6">
-            <div className="relative w-20 h-20 sm:w-28 sm:h-28 rounded-2xl bg-gradient-to-br from-white/80 to-[#f5efe4]/60 border border-[#c9a84c]/30 shadow-lg backdrop-blur-sm overflow-hidden">
-              <img src="/logo.png" alt="چای جاویدان" className="w-full h-full object-cover relative z-10" />
-              <div className="absolute inset-0 bg-gradient-to-br from-[#e8c84a]/10 via-transparent to-[#1a3a2a]/10"></div>
+            <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-2xl bg-gradient-to-br from-white/80 to-[#f5efe4]/60 border border-[#c9a84c]/30 shadow-xl backdrop-blur-sm overflow-hidden">
+              <img src="/logo.png" alt="چای جاویدان" className="w-full h-full object-contain p-2 relative z-10" />
             </div>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.6 }} className="flex justify-center mb-4 sm:mb-6">
-            <div className="flex items-center gap-2.5 bg-white/90 backdrop-blur-xl px-4 sm:px-5 py-1.5 rounded-full border border-[#c9a84c]/30">
+            <div className="flex items-center gap-2.5 bg-white/95 backdrop-blur-xl px-5 sm:px-6 py-2 rounded-full border border-[#c9a84c]/40 shadow-lg">
               <div className="w-2 h-2 rounded-full bg-[#1a3a2a] animate-pulse-soft"></div>
-              <span className="text-xs sm:text-sm font-medium text-[#5c4814]">از سال ۱۳۷۵</span>
+              <span className="text-xs sm:text-sm font-semibold text-[#5c4814] tracking-wide">از سال ۱۳۷۵</span>
             </div>
           </motion.div>
 
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
-            className="text-white text-5xl sm:text-7xl md:text-[82px] leading-[0.92] font-semibold tracking-tighter">
+            className="text-white text-5xl sm:text-7xl md:text-[82px] leading-[0.92] font-semibold tracking-tighter" style={{ textShadow: '0 4px 30px rgba(0,0,0,0.4), 0 2px 8px rgba(0,0,0,0.3)' }}>
             {content.heroTitle}
           </motion.h1>
 
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.6 }}
-            className="text-white/90 mt-3 sm:mt-4 text-lg sm:text-2xl tracking-tight max-w-md mx-auto">
+            className="text-white/95 mt-4 sm:mt-5 text-lg sm:text-2xl tracking-tight max-w-md mx-auto" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
             {content.heroSubtitle}
           </motion.p>
 
@@ -129,7 +130,7 @@ const Home = () => {
               </button>
             </Link>
             <Link to="/about">
-              <button className="btn-outline bg-white/90 text-gold-800 border-white/80 hover:bg-white text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-[17px] w-full sm:w-auto">
+              <button className="btn-outline bg-white/95 text-[#5c4814] border-white/80 hover:bg-white text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-[17px] w-full sm:w-auto shadow-lg">
                 داستان ما
               </button>
             </Link>
@@ -149,7 +150,7 @@ const Home = () => {
               { number: "29+", label: "نوع چای ممتاز" },
               { number: "85+", label: "سال تجربه" },
               { number: "41K", label: "مشتری خوشحال" },
-              { number: "2", label: "استان" }
+              { number: "100%", label: "کیفیت تضمینی" }
             ].map((stat, idx) => (
               <div key={idx} className="bg-white dark:bg-[#2A2520] px-4 sm:px-8 py-5 sm:py-7 text-center">
                 <div className="text-2xl sm:text-4xl font-semibold text-[#5c4814] dark:text-[#e8c84a] tracking-tighter">
@@ -194,39 +195,21 @@ const Home = () => {
 
       {/* REGIONS */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
-        <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
-          <ScrollReveal direction="right">
-            <Link to="/shop?region=گیلان" className="group relative rounded-3xl overflow-hidden aspect-[16/9] md:aspect-auto md:h-[420px] block">
-              <img src="https://picsum.photos/id/1016/1200/800" alt="گیلان" className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40"></div>
-              <div className="absolute bottom-0 p-5 sm:p-8 text-white">
-                <div className="flex items-center gap-2 mb-1">
-                  <Leaf className="w-4 h-4 sm:w-5 sm:h-5 text-[#e8c84a]" />
-                  <span className="uppercase tracking-widest text-[10px] sm:text-xs font-medium text-[#e8c84a]">استان</span>
-                </div>
-                <div className="text-3xl sm:text-5xl font-semibold tracking-tighter">گیلان</div>
-                <p className="text-[#f0d860] text-xs sm:text-sm mt-2 max-w-xs">چای سیاه ممتاز • عطر و طعم بی‌نظیر</p>
-                <div className="mt-3 sm:mt-4 inline-block text-[10px] sm:text-xs px-4 sm:px-5 py-1.5 border border-white/40 rounded-2xl group-hover:bg-white/10">مشاهده محصولات گیلان</div>
+        <ScrollReveal>
+          <Link to="/shop?region=گیلان" className="group relative rounded-3xl overflow-hidden aspect-[16/9] md:aspect-auto md:h-[420px] block">
+            <img src="https://picsum.photos/id/1016/1200/800" alt="گیلان" className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%)' }}></div>
+            <div className="absolute bottom-0 p-8 sm:p-12 text-white">
+              <div className="flex items-center gap-2 mb-2">
+                <Leaf className="w-5 h-5 sm:w-6 sm:h-6 text-[#e8c84a]" />
+                <span className="uppercase tracking-widest text-xs sm:text-sm font-medium text-[#e8c84a]">چای ایرانی</span>
               </div>
-            </Link>
-          </ScrollReveal>
-
-          <ScrollReveal direction="left">
-            <Link to="/shop?region=بوشهر" className="group relative rounded-3xl overflow-hidden aspect-[16/9] md:aspect-auto md:h-[420px] block">
-              <img src="https://picsum.photos/id/160/1200/800" alt="بوشهر" className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40"></div>
-              <div className="absolute bottom-0 p-5 sm:p-8 text-white">
-                <div className="flex items-center gap-2 mb-1">
-                  <Award className="w-4 h-4 sm:w-5 sm:h-5 text-[#e8c84a]" />
-                  <span className="uppercase tracking-widest text-[10px] sm:text-xs font-medium text-[#e8c84a]">استان</span>
-                </div>
-                <div className="text-3xl sm:text-5xl font-semibold tracking-tighter">بوشهر</div>
-                <p className="text-[#f0d860] text-xs sm:text-sm mt-2 max-w-xs">چای سبز و سفید ارگانیک</p>
-                <div className="mt-3 sm:mt-4 inline-block text-[10px] sm:text-xs px-4 sm:px-5 py-1.5 border border-white/40 rounded-2xl group-hover:bg-white/10">مشاهده محصولات بوشهر</div>
-              </div>
-            </Link>
-          </ScrollReveal>
-        </div>
+              <div className="text-4xl sm:text-6xl font-semibold tracking-tighter mb-2">گیلان</div>
+              <p className="text-white/90 text-sm sm:text-lg mt-2 max-w-lg">چای سیاه و سبز ممتاز از بهترین باغات استان گیلان</p>
+              <div className="mt-4 sm:mt-6 inline-block text-xs sm:text-sm px-6 sm:px-8 py-2.5 border border-white/40 rounded-2xl group-hover:bg-white/10 transition-all">مشاهده محصولات گیلان</div>
+            </div>
+          </Link>
+        </ScrollReveal>
       </div>
 
       {/* WHY US */}

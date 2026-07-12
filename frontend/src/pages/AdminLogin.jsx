@@ -29,8 +29,7 @@ const AdminLogin = () => {
         <div className="text-center mb-9">
           <div className="flex justify-center mb-6">
             <div className="relative w-16 h-16 bg-gradient-to-br from-white/80 to-[#f5efe4]/60 border border-[#c9a84c]/30 shadow-md overflow-hidden">
-              <img src="/logo.png" className="w-full h-full object-cover relative z-10" alt="" />
-              <div className="absolute inset-0 bg-gradient-to-br from-[#e8c84a]/10 to-transparent"></div>
+              <img src="/logo.png" className="w-full h-full object-contain p-1 relative z-10" alt="" />
             </div>
           </div>
           <div className="font-amiri text-4xl tracking-tight text-[#5c4814] dark:text-[#e8c84a] font-bold">چای جاویدان</div>

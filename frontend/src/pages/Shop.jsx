@@ -25,11 +25,11 @@ const Shop = ({ searchQuery: propSearchQuery }) => {
         // fallback data
         setProducts([
           { id: 1, name: "چای سیاه ممتاز گیلان", price: 185000, originalPrice: 210000, image: "https://picsum.photos/id/1015/600/600", category: "سیاه", region: "گیلان", description: "چای سیاه با کیفیت عالی", stock: 45, rating: 4.8, reviews: 124, featured: true },
-          { id: 2, name: "چای سبز ارگانیک بوشهر", price: 165000, image: "https://picsum.photos/id/106/600/600", category: "سبز", region: "بوشهر", description: "چای سبز ارگانیک", stock: 32, rating: 4.6, reviews: 89, featured: true },
+          { id: 2, name: "چای سبز ارگانیک گیلان", price: 165000, image: "https://picsum.photos/id/106/600/600", category: "سبز", region: "گیلان", description: "چای سبز ارگانیک", stock: 32, rating: 4.6, reviews: 89, featured: true },
           { id: 3, name: "چای دارچین و هل گیلان", price: 205000, originalPrice: 240000, image: "https://picsum.photos/id/312/600/600", category: "طعم‌دار", region: "گیلان", description: "ترکیبی لوکس", stock: 27, rating: 4.9, reviews: 156, featured: true },
-          { id: 4, name: "چای سفید ممتاز بوشهر", price: 295000, image: "https://picsum.photos/id/201/600/600", category: "سفید", region: "بوشهر", description: "چای سفید نادر", stock: 18, rating: 4.7, reviews: 73, featured: false },
-          { id: 5, name: "چای گلستان گیلان", price: 175000, originalPrice: 195000, image: "https://picsum.photos/id/160/600/600", category: "سیاه", region: "گیلان", description: "چای سیاه خوش‌عطر", stock: 61, rating: 4.5, reviews: 211, featured: true },
-          { id: 6, name: "چای عطری بوشهر", price: 149000, image: "https://picsum.photos/id/292/600/600", category: "طعم‌دار", region: "بوشهر", description: "چای با عطر گل‌های محلی", stock: 54, rating: 4.3, reviews: 67, featured: false }
+          { id: 4, name: "چای سیاه لاهیجان", price: 195000, image: "https://picsum.photos/id/201/600/600", category: "سیاه", region: "گیلان", description: "چای سیاه ناب", stock: 18, rating: 4.7, reviews: 73, featured: false },
+          { id: 5, name: "چای سبز بهاره گیلان", price: 175000, originalPrice: 195000, image: "https://picsum.photos/id/160/600/600", category: "سبز", region: "گیلان", description: "چای سبز خوش‌عطر", stock: 61, rating: 4.5, reviews: 211, featured: true },
+          { id: 6, name: "چای سیاه ترش گیلان", price: 149000, image: "https://picsum.photos/id/292/600/600", category: "طعم‌دار", region: "گیلان", description: "چای سیاه ترش", stock: 54, rating: 4.3, reviews: 67, featured: false }
         ]);
       }
     };
@@ -78,8 +78,8 @@ const Shop = ({ searchQuery: propSearchQuery }) => {
     setFilteredProducts(filtered);
   }, [products, activeRegion, activeCategory, searchQuery, sortBy, searchParams]);
 
-  const regions = ['گیلان', 'بوشهر'];
-  const categories = ['سیاه', 'سبز', 'سفید', 'طعم‌دار'];
+  const regions = ['گیلان'];
+  const categories = ['سیاه', 'سبز', 'طعم‌دار'];
 
   const resetFilters = () => {
     setActiveRegion('all');

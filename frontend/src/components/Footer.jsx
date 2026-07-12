@@ -11,8 +11,7 @@ const Footer = () => {
         <div className="md:col-span-4">
           <div className="flex items-center gap-2.5 mb-4">
             <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-white/80 to-[#f5efe4]/60 dark:from-white/10 dark:to-[#f5efe4]/10 border border-[#c9a84c]/30 dark:border-[#3D3630]/50 shadow-sm overflow-hidden">
-              <img src="/logo.png" alt="لوگو" className="w-full h-full object-cover relative z-10" />
-              <div className="absolute inset-0 bg-gradient-to-br from-[#e8c84a]/10 to-transparent"></div>
+              <img src="/logo.png" alt="لوگو" className="w-full h-full object-contain p-1 relative z-10" />
             </div>
             <div>
               <span className="text-lg tracking-tight text-[#5c4814] dark:text-[#e8c84a] font-bold">چای جاویدان</span>
@@ -24,7 +23,7 @@ const Footer = () => {
           </p>
           <div className="flex items-center gap-2 mt-4 text-sm text-[#9a7a24] dark:text-[#c9a84c]">
             <MapPin className="w-4 h-4" />
-            <span>گیلان و بوشهر، ایران</span>
+            <span>گیلان، ایران</span>
           </div>
         </div>
 
@@ -41,8 +40,8 @@ const Footer = () => {
           <div>
             <div className="font-medium mb-3 text-[#5c4814] dark:text-[#e8c84a]">دسته‌ها</div>
             <div className="space-y-2.5 text-[#9a7a24] dark:text-[#c9a84c]">
-              <Link to="/shop?region=گیلان" className="block hover:text-[#5c4814] transition-colors">چای گیلان</Link>
-              <Link to="/shop?region=بوشهر" className="block hover:text-[#5c4814] transition-colors">چای بوشهر</Link>
+              <Link to="/shop?category=سیاه" className="block hover:text-[#5c4814] transition-colors">چای سیاه</Link>
+              <Link to="/shop?category=سبز" className="block hover:text-[#5c4814] transition-colors">چای سبز</Link>
               <Link to="/shop?category=طعم‌دار" className="block hover:text-[#5c4814] transition-colors">چای طعم‌دار</Link>
             </div>
           </div>
