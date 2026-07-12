@@ -97,52 +97,80 @@ const Home = () => {
           </svg>
         </div>
 
-        <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 flex flex-col items-center justify-center gap-4 sm:gap-5">
+          {/* Logo */}
           <motion.img
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.1, duration: 0.6 }}
+            initial={{ opacity: 0, scale: 0.85, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
             src="/logo.png"
             alt="چای جاویدان"
-            className="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4 sm:mb-6 object-contain drop-shadow-2xl"
+            className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain drop-shadow-[0_8px_30px_rgba(201,168,76,0.35)]"
           />
 
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.6 }} className="flex justify-center mb-4 sm:mb-6">
-            <div className="flex items-center gap-2.5 bg-white/95 backdrop-blur-xl px-5 sm:px-6 py-2 rounded-full border border-[#C9A84C]/40 shadow-lg">
-              <div className="w-2 h-2 rounded-full bg-[#1B3A2B] animate-pulse-soft"></div>
-              <span className="text-xs sm:text-sm font-semibold text-[#8B6914] tracking-wide">از سال ۱۳۷۵</span>
-            </div>
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25, duration: 0.5 }}
+            className="flex items-center gap-2 bg-white/90 backdrop-blur-xl px-4 sm:px-5 py-1.5 rounded-full border border-[#C9A84C]/30 shadow-md"
+          >
+            <div className="w-1.5 h-1.5 rounded-full bg-[#1B3A2B] animate-pulse-soft"></div>
+            <span className="text-[11px] sm:text-xs font-semibold text-[#8B6914] tracking-widest uppercase">از سال ۱۳۷۵</span>
           </motion.div>
 
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
-            className="text-white text-5xl sm:text-7xl md:text-[82px] leading-[0.92] font-semibold tracking-tighter" style={{ textShadow: '0 4px 30px rgba(0,0,0,0.4), 0 2px 8px rgba(0,0,0,0.3)' }}>
+          {/* Title */}
+          <motion.h1
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
+            className="text-white text-5xl sm:text-6xl md:text-[76px] leading-[1] font-bold tracking-tight text-center"
+            style={{ textShadow: '0 4px 40px rgba(0,0,0,0.5), 0 2px 10px rgba(0,0,0,0.4)' }}
+          >
             {content.heroTitle}
           </motion.h1>
 
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.6 }}
-            className="text-white/95 mt-4 sm:mt-5 text-lg sm:text-2xl tracking-tight max-w-md mx-auto" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.55, duration: 0.6 }}
+            className="text-white/90 text-base sm:text-xl md:text-2xl tracking-tight text-center max-w-lg leading-relaxed"
+            style={{ textShadow: '0 2px 16px rgba(0,0,0,0.3)' }}
+          >
             {content.heroSubtitle}
           </motion.p>
 
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8, duration: 0.6 }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-8 sm:mt-10">
-            <Link to="/shop">
-              <button className="btn-gold text-sm sm:text-base px-8 sm:px-10 py-3 sm:py-[17px] flex items-center gap-2 group w-full sm:w-auto justify-center">
+          {/* Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.6 }}
+            className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mt-2 sm:mt-4"
+          >
+            <Link to="/shop" className="w-full sm:w-auto">
+              <button className="btn-gold text-sm sm:text-base px-8 sm:px-10 py-3 sm:py-[17px] flex items-center justify-center gap-2 group w-full">
                 مشاهده فروشگاه
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition" />
               </button>
             </Link>
-            <Link to="/about">
-              <button className="btn-outline bg-white/95 text-[#8B6914] border-white/80 hover:bg-white text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-[17px] w-full sm:w-auto shadow-lg">
+            <Link to="/about" className="w-full sm:w-auto">
+              <button className="btn-outline bg-white/90 text-[#8B6914] border-white/70 hover:bg-white text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-[17px] w-full shadow-lg">
                 داستان ما
               </button>
             </Link>
           </motion.div>
         </div>
 
-        <div className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center text-white/70 text-xs tracking-[3px]">
-          اسکرول کنید <div className="w-px h-9 bg-white/40 mt-1"></div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+          className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5"
+        >
+          <span className="text-[10px] text-white/50 tracking-[4px] uppercase font-medium">اسکرول</span>
+          <div className="w-px h-8 bg-gradient-to-b from-white/40 to-transparent"></div>
+        </motion.div>
       </div>
 
       {/* STATS - Count-up animation */}
