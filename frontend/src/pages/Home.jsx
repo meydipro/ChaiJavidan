@@ -179,18 +179,18 @@ const Home = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
-          className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          className="absolute bottom-8 sm:bottom-14 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-30"
         >
-          <span className="text-[9px] text-white/40 tracking-[5px] uppercase font-medium">اسکرول</span>
-          <div className="w-px h-10 bg-gradient-to-b from-[#C9A84C]/50 via-[#C9A84C]/20 to-transparent"></div>
+          <span className="text-[10px] text-white/50 tracking-[6px] uppercase font-semibold">اسکرول</span>
+          <div className="w-px h-12 bg-gradient-to-b from-[#C9A84C]/60 via-[#C9A84C]/25 to-transparent"></div>
         </motion.div>
 
         {/* Bottom gradient fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAF7F0] dark:from-[#141A16] to-transparent pointer-events-none z-20"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#FAF7F0] dark:from-[#141A16] via-[#FAF7F0]/60 dark:via-[#141A16]/60 to-transparent pointer-events-none z-[5]"></div>
       </div>
 
       {/* STATS - Liquid Glass */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 -mt-8 relative z-10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 -mt-10 relative z-20">
         <ScrollReveal>
           <div className="backdrop-blur-2xl bg-white/50 dark:bg-[#1E2A22]/50 border border-white/40 dark:border-[#2D3D32]/40 rounded-3xl shadow-[0_8px_40px_-12px_rgba(201,168,76,0.15)] overflow-hidden">
             <div className="grid grid-cols-2 md:grid-cols-4 md:divide-x divide-y md:divide-y-0 divide-[#C9A84C]/10 dark:divide-[#2D3D32]/40">
