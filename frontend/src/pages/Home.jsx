@@ -97,56 +97,69 @@ const Home = () => {
           </svg>
         </div>
 
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 flex flex-col items-center justify-center gap-4 sm:gap-5">
-          {/* Logo */}
-          <motion.img
-            initial={{ opacity: 0, scale: 0.85, y: 10 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
-            src="/logo.png"
-            alt="چای جاویدان"
-            className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain drop-shadow-[0_8px_30px_rgba(201,168,76,0.35)]"
-          />
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-5 sm:px-6 flex flex-col items-center text-center">
+          {/* Logo with glow */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.1, duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
+            className="relative mb-5 sm:mb-6"
+          >
+            <div className="absolute inset-0 blur-2xl bg-[#C9A84C]/20 rounded-full scale-150"></div>
+            <img
+              src="/logo.png"
+              alt="چای جاویدان"
+              className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-[110px] md:h-[110px] object-contain drop-shadow-[0_8px_25px_rgba(201,168,76,0.4)]"
+            />
+          </motion.div>
 
           {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.25, duration: 0.5 }}
-            className="flex items-center gap-2 bg-white/90 backdrop-blur-xl px-4 sm:px-5 py-1.5 rounded-full border border-[#C9A84C]/30 shadow-md"
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="flex items-center gap-2 bg-white/90 backdrop-blur-xl px-5 py-1.5 rounded-full border border-[#C9A84C]/25 shadow-md mb-5 sm:mb-6"
           >
             <div className="w-1.5 h-1.5 rounded-full bg-[#1B3A2B] animate-pulse-soft"></div>
-            <span className="text-[11px] sm:text-xs font-semibold text-[#8B6914] tracking-widest uppercase">از سال ۱۳۷۵</span>
+            <span className="text-[10px] sm:text-[11px] font-bold text-[#8B6914] tracking-[5px] uppercase">از سال ۱۳۷۵</span>
           </motion.div>
 
           {/* Title */}
           <motion.h1
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
-            className="text-white text-5xl sm:text-6xl md:text-[76px] leading-[1] font-bold tracking-tight text-center"
-            style={{ textShadow: '0 4px 40px rgba(0,0,0,0.5), 0 2px 10px rgba(0,0,0,0.4)' }}
+            transition={{ delay: 0.45, duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
+            className="text-white text-[44px] sm:text-6xl md:text-[78px] leading-[1.05] font-bold tracking-tight"
+            style={{ textShadow: '0 4px 40px rgba(0,0,0,0.5), 0 1px 6px rgba(0,0,0,0.3)' }}
           >
             {content.heroTitle}
           </motion.h1>
 
+          {/* Decorative divider */}
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ delay: 0.6, duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
+            className="w-16 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/60 to-transparent my-4 sm:my-5"
+          />
+
           {/* Subtitle */}
           <motion.p
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.55, duration: 0.6 }}
-            className="text-white/90 text-base sm:text-xl md:text-2xl tracking-tight text-center max-w-lg leading-relaxed"
-            style={{ textShadow: '0 2px 16px rgba(0,0,0,0.3)' }}
+            transition={{ delay: 0.7, duration: 0.6 }}
+            className="text-white/85 text-base sm:text-lg md:text-xl tracking-tight max-w-md leading-relaxed"
+            style={{ textShadow: '0 2px 12px rgba(0,0,0,0.3)' }}
           >
             {content.heroSubtitle}
           </motion.p>
 
           {/* Buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
-            className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mt-2 sm:mt-4"
+            transition={{ delay: 0.85, duration: 0.6 }}
+            className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mt-7 sm:mt-9"
           >
             <Link to="/shop" className="w-full sm:w-auto">
               <button className="btn-gold text-sm sm:text-base px-8 sm:px-10 py-3 sm:py-[17px] flex items-center justify-center gap-2 group w-full">
@@ -166,11 +179,14 @@ const Home = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
-          className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5"
+          className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
-          <span className="text-[10px] text-white/50 tracking-[4px] uppercase font-medium">اسکرول</span>
-          <div className="w-px h-8 bg-gradient-to-b from-white/40 to-transparent"></div>
+          <span className="text-[9px] text-white/40 tracking-[5px] uppercase font-medium">اسکرول</span>
+          <div className="w-px h-10 bg-gradient-to-b from-[#C9A84C]/50 via-[#C9A84C]/20 to-transparent"></div>
         </motion.div>
+
+        {/* Bottom gradient fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAF7F0] dark:from-[#141A16] to-transparent pointer-events-none z-20"></div>
       </div>
 
       {/* STATS - Count-up animation */}
