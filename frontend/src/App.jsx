@@ -1,24 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  ShoppingCart, Menu, X, User, Search, Heart, ChevronDown, 
-  MapPin, Award, Leaf, Star, ArrowRight 
-} from 'lucide-react';
-import { Toaster, toast } from 'sonner';
+import React, { useState, lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Toaster } from 'sonner';
 
-// Import pages
-import Home from './pages/Home';
-import Shop from './pages/Shop';
-import ProductDetail from './pages/ProductDetail';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Cart from './pages/Cart';
-import Admin from './pages/Admin';
-import AdminLogin from './pages/AdminLogin';
-import Signup from './pages/Signup';
-import Login from './pages/Login';
-import ForgotPassword from './pages/ForgotPassword';
+// Lazy load pages for better performance
+const Home = lazy(() => import('./pages/Home'));
+const Shop = lazy(() => import('./pages/Shop'));
+const ProductDetail = lazy(() => import('./pages/ProductDetail'));
+const About = lazy(() => import('./pages/About'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Cart = lazy(() => import('./pages/Cart'));
+const Admin = lazy(() => import('./pages/Admin'));
+const AdminLogin = lazy(() => import('./pages/AdminLogin'));
+const Signup = lazy(() => import('./pages/Signup'));
+const Login = lazy(() => import('./pages/Login'));
+const ForgotPassword = lazy(() => import('./pages/ForgotPassword'));
 
 // Components
 import Navbar from './components/Navbar';
@@ -31,6 +26,16 @@ import PageTransition from './components/animations/PageTransition';
 import { CartProvider } from './context/CartContext';
 import { AdminProvider } from './context/AdminContext';
 import { AuthProvider } from './context/AuthContext';
+
+// Loading fallback
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-[#FAF7F0] dark:bg-[#141A16]">
+    <div className="flex flex-col items-center gap-3">
+      <div className="w-10 h-10 border-3 border-[#C9A84C]/30 border-t-[#C9A84C] rounded-full animate-spin"></div>
+      <div className="text-sm text-[#C9A84C]">در حال بارگذاری...</div>
+    </div>
+  </div>
+);
 
 function App() {
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
@@ -58,19 +63,21 @@ function App() {
 
               <main>
                 <PageTransition>
-                  <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/shop" element={<Shop searchQuery={searchQuery} />} />
-                    <Route path="/product/:id" element={<ProductDetail />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/cart" element={<Cart setIsCartOpen={setIsCartOpen} />} />
-                    <Route path="/signup" element={<Signup />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/forgot-password" element={<ForgotPassword />} />
-                    <Route path="/admin/login" element={<AdminLogin />} />
-                    <Route path="/admin" element={<Admin />} />
-                  </Routes>
+                  <Suspense fallback={<PageLoader />}>
+                    <Routes>
+                      <Route path="/" element={<Home />} />
+                      <Route path="/shop" element={<Shop searchQuery={searchQuery} />} />
+                      <Route path="/product/:id" element={<ProductDetail />} />
+                      <Route path="/about" element={<About />} />
+                      <Route path="/contact" element={<Contact />} />
+                      <Route path="/cart" element={<Cart setIsCartOpen={setIsCartOpen} />} />
+                      <Route path="/signup" element={<Signup />} />
+                      <Route path="/login" element={<Login />} />
+                      <Route path="/forgot-password" element={<ForgotPassword />} />
+                      <Route path="/admin/login" element={<AdminLogin />} />
+                      <Route path="/admin" element={<Admin />} />
+                    </Routes>
+                  </Suspense>
                 </PageTransition>
               </main>
 

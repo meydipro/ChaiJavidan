@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ShoppingCart, Heart, ArrowLeft, Star } from 'lucide-react';
+import { ShoppingCart, ArrowLeft, Star } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import axios from 'axios';
 
@@ -10,6 +10,7 @@ const ProductDetail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
+  const [imageLoaded, setImageLoaded] = useState(false);
   const { addToCart } = useCart();
 
   useEffect(() => {
@@ -39,7 +40,12 @@ const ProductDetail = () => {
   }, [id]);
 
   if (!product) return (
-    <div className="pt-28 max-w-4xl mx-auto px-6 py-20">در حال بارگذاری...</div>
+    <div className="pt-28 max-w-4xl mx-auto px-6 py-20">
+      <div className="flex items-center justify-center gap-3">
+        <div className="w-6 h-6 border-2 border-[#C9A84C]/30 border-t-[#C9A84C] rounded-full animate-spin"></div>
+        <span className="text-[#C9A84C]">در حال بارگذاری...</span>
+      </div>
+    </div>
   );
 
   const handleAdd = () => {
@@ -48,7 +54,7 @@ const ProductDetail = () => {
 
   return (
     <div className="pt-28 max-w-6xl mx-auto px-4 sm:px-6 pb-20">
-      <Link to="/shop" className="inline-flex items-center gap-2 text-sm text-gold-700 mt-8 mb-8 hover:text-gold-900">
+      <Link to="/shop" className="inline-flex items-center gap-2 text-sm text-gold-700 mt-8 mb-8 hover:text-gold-900 transition-colors">
         <ArrowLeft className="w-4 h-4" /> بازگشت به فروشگاه
       </Link>
 
@@ -56,10 +62,15 @@ const ProductDetail = () => {
         {/* Image */}
         <div className="relative">
           <div className="aspect-square rounded-3xl overflow-hidden bg-white dark:bg-[#1E2A22] shadow-inner border border-gold-100 dark:border-[#2D3D32]">
-            <img 
-              src={product.image} 
-              alt={product.name} 
-              className="w-full h-full object-cover" 
+            {!imageLoaded && (
+              <div className="absolute inset-0 bg-gradient-to-br from-gold-100 to-gold-50 dark:from-gold-900 dark:to-gold-950 animate-pulse"></div>
+            )}
+            <img
+              src={product.image}
+              alt={product.name}
+              loading="lazy"
+              onLoad={() => setImageLoaded(true)}
+              className={`w-full h-full object-cover transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
             />
           </div>
           <div className="absolute top-5 right-5 px-4 py-1 text-sm bg-white dark:bg-[#1E2A22] rounded-2xl border border-gold-100 dark:border-[#2D3D32] shadow-sm">
@@ -70,7 +81,7 @@ const ProductDetail = () => {
         {/* Info */}
         <div className="pt-2">
           <div className="badge mb-3">{product.category}</div>
-          
+
           <h1 className="text-3xl sm:text-5xl font-semibold tracking-[-1.6px] leading-none">{product.name}</h1>
 
           <div className="flex items-center gap-4 mt-5">
@@ -100,13 +111,13 @@ const ProductDetail = () => {
 
           <div className="mt-8 flex items-center gap-4">
             <div className="flex items-center border border-gold-200 dark:border-[#2D3D32] rounded-2xl overflow-hidden">
-              <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="px-4 py-3 hover:bg-gold-50">-</button>
+              <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="px-4 py-3 hover:bg-gold-50 transition-colors">-</button>
               <div className="px-6 font-medium">{quantity}</div>
-              <button onClick={() => setQuantity(quantity + 1)} className="px-4 py-3 hover:bg-gold-50">+</button>
+              <button onClick={() => setQuantity(quantity + 1)} className="px-4 py-3 hover:bg-gold-50 transition-colors">+</button>
             </div>
 
-            <button 
-              onClick={handleAdd} 
+            <button
+              onClick={handleAdd}
               className="flex-1 btn-gold py-4 text-base"
             >
               افزودن به سبد خرید

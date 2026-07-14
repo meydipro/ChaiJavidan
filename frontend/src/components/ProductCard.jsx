@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Heart, ShoppingCart } from 'lucide-react';
+import { ShoppingCart } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import { motion } from 'framer-motion';
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const handleAddToCart = (e) => {
     e.preventDefault();
@@ -17,16 +17,21 @@ const ProductCard = ({ product }) => {
     <Link to={`/product/${product.id}`} className="block group">
       <div className="card h-full flex flex-col">
         <div className="relative aspect-square bg-gold-50 dark:bg-gold-950/30 overflow-hidden">
-          <img 
-            src={product.image} 
-            alt={product.name} 
-            className="product-img w-full h-full object-cover" 
+          {!imageLoaded && (
+            <div className="absolute inset-0 bg-gradient-to-br from-gold-100 to-gold-50 dark:from-gold-900 dark:to-gold-950 animate-pulse"></div>
+          )}
+          <img
+            src={product.image}
+            alt={product.name}
+            loading="lazy"
+            onLoad={() => setImageLoaded(true)}
+            className={`product-img w-full h-full object-cover transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
           />
-          
+
           {product.originalPrice && (
             <div className="absolute top-4 right-4 badge text-xs font-medium">تخفیف</div>
           )}
-          
+
           <button
             onClick={handleAddToCart}
             className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 sm:opacity-0 sm:group-hover:opacity-100 transition-all bg-white/90 dark:bg-[#1E2A22]/90 backdrop-blur-sm shadow px-3 py-1.5 rounded-2xl flex items-center gap-1.5 text-xs font-medium text-gold-800 dark:text-gold-300 hover:bg-gold-50 dark:hover:bg-gold-950"
@@ -42,7 +47,7 @@ const ProductCard = ({ product }) => {
               <div className="font-medium leading-tight text-sm tracking-tight">{product.name}</div>
               <div className="text-[11px] text-gold-600 dark:text-gold-400 mt-px">{product.region} • {product.category}</div>
             </div>
-            
+
             <div className="text-right">
               <div className="font-semibold text-sm">{product.price.toLocaleString('fa-IR')}</div>
               {product.originalPrice && (
@@ -66,4 +71,4 @@ const ProductCard = ({ product }) => {
   );
 };
 
-export default ProductCard;
+export default React.memo(ProductCard);
