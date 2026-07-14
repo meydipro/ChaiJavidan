@@ -28,7 +28,9 @@ const AdminLogin = () => {
       <div className="max-w-md w-full mx-auto px-4 sm:px-6">
         <div className="text-center mb-9">
           <div className="flex justify-center mb-6">
-            <img src="/logo.png" className="w-14 h-14 rounded-xl object-cover" alt="لوگو" />
+            <div className="w-16 h-16 rounded-xl overflow-hidden flex items-center justify-center bg-white/80 border border-[#C9A84C]/20 shadow-md">
+              <img src="/logo.png" className="w-full h-full object-contain p-1.5" alt="لوگو" />
+            </div>
           </div>
           <div className="font-amiri text-4xl tracking-tight text-[#8B6914] dark:text-[#D4B85C] font-bold">چای جاویدان</div>
           <p className="text-sm text-[#C9A84C] dark:text-[#D4B85C] mt-1">پنل مدیریت</p>

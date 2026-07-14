@@ -10,7 +10,9 @@ const Footer = () => {
         {/* Brand */}
         <div className="md:col-span-4">
           <div className="flex items-center gap-2 mb-4">
-            <img src="/logo.png" alt="لوگو" className="w-9 h-9 rounded-lg object-cover" />
+            <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center bg-white/80 border border-[#C9A84C]/20">
+              <img src="/logo.png" alt="لوگو" className="w-full h-full object-contain p-1" />
+            </div>
             <div>
               <span className="text-lg tracking-tight text-[#8B6914] dark:text-[#D4B85C] font-bold">چای جاویدان</span>
               <div className="text-[8px] text-[#C9A84C] dark:text-[#D4B85C] tracking-[3px] font-medium">CHAI JAVIDAN</div>

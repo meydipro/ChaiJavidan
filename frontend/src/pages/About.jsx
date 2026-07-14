@@ -60,8 +60,8 @@ const About = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {[
-            { icon: MapPin, title: "گیلان", desc: "قلب چای سیاه ایران" },
-            { icon: MapPin, title: "بوشهر", desc: "چای سبز و سفید ارگانیک" },
+            { icon: MapPin, title: "گیلان", desc: "قلب چای ایران" },
+            { icon: Award, title: "کیفیت", desc: "استاندارد بین‌المللی" },
             { icon: Users, title: "تیم ما", desc: "بیش از ۸۰ نفر متخصص" }
           ].map((item, i) => (
             <div key={i} className="p-8 border border-gold-100 dark:border-[#2D3D32] bg-white dark:bg-[#1E2A22] rounded-3xl">

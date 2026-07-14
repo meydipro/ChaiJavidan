@@ -47,7 +47,7 @@ const Admin = () => {
       // fallback demo data
       setProducts([
         { id: 1, name: "چای سیاه ممتاز گیلان", price: 185000, region: "گیلان", category: "سیاه", image: "https://picsum.photos/id/1015/600/600", description: "...", stock: 45, rating: 4.8 },
-        { id: 2, name: "چای سبز ارگانیک بوشهر", price: 165000, region: "بوشهر", category: "سبز", image: "https://picsum.photos/id/106/600/600", description: "...", stock: 32, rating: 4.6 }
+        { id: 2, name: "چای سبز ارگانیک گیلان", price: 165000, region: "گیلان", category: "سبز", image: "https://picsum.photos/id/106/600/600", description: "...", stock: 32, rating: 4.6 }
       ]);
       setContent({ heroTitle: "چای جاویدان", heroSubtitle: "طعم اصیل ایرانی در هر فنجان", aboutText: "...", heroImage: "https://picsum.photos/id/1018/2000/1200" });
       setEditingContent({ heroTitle: "چای جاویدان", heroSubtitle: "طعم اصیل ایرانی در هر فنجان", aboutText: "...", heroImage: "https://picsum.photos/id/1018/2000/1200" });
@@ -227,13 +227,11 @@ const Admin = () => {
 
                 <select value={editingProduct ? editingProduct.region : newProduct.region} onChange={e => editingProduct ? setEditingProduct({...editingProduct, region: e.target.value}) : setNewProduct({...newProduct, region: e.target.value})}>
                   <option>گیلان</option>
-                  <option>بوشهر</option>
                 </select>
 
                 <select value={editingProduct ? editingProduct.category : newProduct.category} onChange={e => editingProduct ? setEditingProduct({...editingProduct, category: e.target.value}) : setNewProduct({...newProduct, category: e.target.value})}>
                   <option>سیاه</option>
                   <option>سبز</option>
-                  <option>سفید</option>
                   <option>طعم‌دار</option>
                 </select>
 

@@ -270,8 +270,8 @@ const Home = () => {
                   <div className="text-[10px] text-white/60 tracking-widest mt-1">سال تأسیس</div>
                 </div>
                 <div className="backdrop-blur-xl bg-white/10 border border-white/15 rounded-2xl px-6 py-4">
-                  <div className="text-2xl font-bold text-[#D4B85C]">۲ استان</div>
-                  <div className="text-[10px] text-white/60 tracking-widest mt-1">محور تولید</div>
+                  <div className="text-2xl font-bold text-[#D4B85C]">گیلان</div>
+                  <div className="text-[10px] text-white/60 tracking-widest mt-1">مرکز تولید</div>
                 </div>
               </div>
             </div>
@@ -291,7 +291,7 @@ const Home = () => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {[
-              { icon: Leaf, title: "برگ‌های برگزیده", desc: "دستی انتخاب‌شده از بهترین باغات گیلان و بوشهر" },
+              { icon: Leaf, title: "برگ‌های برگزیده", desc: "دستی انتخاب‌شده از بهترین باغات گیلان" },
               { icon: ShieldCheck, title: "کیفیت ممتاز", desc: "استانداردهای بین‌المللی و آزمایشگاه مجهز" },
               { icon: Truck, title: "ارسال سریع", desc: "ارسال به سراسر کشور در کمتر از ۳ روز" },
               { icon: Heart, title: "رضایت مشتری", desc: "بیش از ۴۱ هزار مشتری راضی و وفادار" }
