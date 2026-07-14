@@ -57,8 +57,8 @@ const Navbar = ({ setIsMegaMenuOpen, isMegaMenuOpen, setIsCartOpen, searchQuery,
         <div className="flex items-center justify-between h-full px-5">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group shrink-0">
-            <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center bg-white/80 border border-[#C9A84C]/20">
-              <img src="/logo.png" alt="چای جاویدان" className="w-full h-full object-contain p-1" />
+            <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
+              <img src="/logo.png" alt="چای جاویدان" className="w-full h-full object-contain" />
             </div>
             <div className="hidden sm:block">
               <div className="font-amiri text-lg tracking-tight text-[#8B6914] dark:text-[#D4B85C] font-bold leading-tight">چای جاویدان</div>
