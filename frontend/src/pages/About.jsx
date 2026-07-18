@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Leaf, Award, MapPin, Users } from 'lucide-react';
 import axios from 'axios';
 
-const API = 'http://localhost:5001/api';
+const API = import.meta.env.VITE_API_URL;
 
 const About = () => {
   const [content, setContent] = useState({

@@ -6,7 +6,7 @@ import ProductCard from '../components/ProductCard';
 import ScrollReveal from '../components/animations/ScrollReveal';
 import axios from 'axios';
 
-const API = 'http://localhost:5001/api';
+const API = import.meta.env.VITE_API_URL;
 
 const CountUp = ({ end, duration = 2 }) => {
   const [count, setCount] = useState(0);

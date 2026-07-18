@@ -5,7 +5,7 @@ const AdminContext = createContext();
 
 export const useAdmin = () => useContext(AdminContext);
 
-const API_BASE = 'http://localhost:5001/api';
+const API_BASE = import.meta.env.VITE_API_URL;
 
 export const AdminProvider = ({ children }) => {
   const [user, setUser] = useState(null);

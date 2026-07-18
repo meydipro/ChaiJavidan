@@ -3,7 +3,7 @@ import { MapPin, Phone, Mail, Send, Clock, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 
-const API = 'http://localhost:5001/api';
+const API = import.meta.env.VITE_API_URL;
 
 const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });

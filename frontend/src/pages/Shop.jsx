@@ -4,7 +4,7 @@ import ProductCard from '../components/ProductCard';
 import { Filter, X } from 'lucide-react';
 import axios from 'axios';
 
-const API = 'http://localhost:5001/api';
+const API = import.meta.env.VITE_API_URL;
 
 const Shop = ({ searchQuery: propSearchQuery }) => {
   const [products, setProducts] = useState([]);

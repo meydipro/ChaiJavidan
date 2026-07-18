@@ -5,7 +5,7 @@ import axios from 'axios';
 import { toast } from 'sonner';
 import { Plus, Trash2, Edit2, Save, LogOut, ArrowLeft, Upload, X, Image as ImageIcon } from 'lucide-react';
 
-const API = 'http://localhost:5001/api';
+const API = import.meta.env.VITE_API_URL;
 
 const Admin = () => {
   const { user, isAdmin, token, logout, loading } = useAdmin();
