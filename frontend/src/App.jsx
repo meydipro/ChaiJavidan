@@ -1,5 +1,5 @@
 import React, { useState, lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'sonner';
 
 // Lazy load pages for better performance
