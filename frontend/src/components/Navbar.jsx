@@ -58,7 +58,7 @@ const Navbar = ({ setIsMegaMenuOpen, isMegaMenuOpen, setIsCartOpen, searchQuery,
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group shrink-0">
             <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
-              <img src="/logo.png" alt="چای جاویدان" className="w-full h-full object-contain" />
+              <img src={`${import.meta.env.BASE_URL}logo.png`} alt="چای جاویدان" className="w-full h-full object-contain" />
             </div>
             <div className="hidden sm:block">
               <div className="font-amiri text-lg tracking-tight text-[#8B6914] dark:text-[#D4B85C] font-bold leading-tight">چای جاویدان</div>

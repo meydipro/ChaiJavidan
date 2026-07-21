@@ -44,7 +44,7 @@ const AdminLogin = () => {
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="w-20 h-20 mx-auto mb-4 rounded-2xl overflow-hidden flex items-center justify-center">
-            <img src="/logo.png" className="w-full h-full object-contain" alt="لوگو" />
+            <img src={`${import.meta.env.BASE_URL}logo.png`} className="w-full h-full object-contain" alt="لوگو" />
           </div>
           <h1 className="text-2xl font-bold text-white tracking-tight">چای جاویدان</h1>
           <p className="text-sm text-[#C9A84C] mt-1">پنل مدیریت</p>
