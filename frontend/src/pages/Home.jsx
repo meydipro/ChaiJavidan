@@ -98,27 +98,12 @@ const Home = () => {
         </div>
 
         <div className="relative z-10 w-full max-w-5xl mx-auto px-6 sm:px-8 flex flex-col items-center text-center">
-          {/* Logo with glow */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.1, duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-            className="relative mb-5 sm:mb-6"
-          >
-            <div className="absolute inset-0 blur-3xl bg-[#C9A84C]/20 rounded-full scale-[2.5]"></div>
-            <img
-              src={`${import.meta.env.BASE_URL}logo.png`}
-              alt="چای جاویدان"
-              className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain drop-shadow-[0_8px_30px_rgba(201,168,76,0.4)]"
-            />
-          </motion.div>
-
           {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-            className="flex items-center gap-2.5 bg-white/10 backdrop-blur-xl px-5 py-2 rounded-full border border-white/15 shadow-lg mb-6 sm:mb-7"
+            transition={{ delay: 0.15, duration: 0.5 }}
+            className="flex items-center gap-2.5 bg-white/10 backdrop-blur-xl px-5 py-2 rounded-full border border-white/15 shadow-lg mb-5 sm:mb-6"
           >
             <div className="w-1.5 h-1.5 rounded-full bg-[#D4B85C] animate-pulse"></div>
             <span className="text-[10px] sm:text-[11px] font-bold text-white/80 tracking-[5px] uppercase">از سال ۱۳۷۵</span>
@@ -128,7 +113,7 @@ const Home = () => {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45, duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
+            transition={{ delay: 0.3, duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
             className="text-white text-[42px] sm:text-6xl md:text-[82px] leading-[1.05] font-bold tracking-tight"
             style={{ textShadow: '0 4px 40px rgba(0,0,0,0.5), 0 1px 6px rgba(0,0,0,0.3)' }}
           >
@@ -139,7 +124,7 @@ const Home = () => {
           <motion.div
             initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ delay: 0.6, duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
+            transition={{ delay: 0.45, duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
             className="w-20 h-[1.5px] bg-gradient-to-r from-transparent via-[#D4B85C]/70 to-transparent my-5 sm:my-6"
           />
 
@@ -147,7 +132,7 @@ const Home = () => {
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
+            transition={{ delay: 0.55, duration: 0.6 }}
             className="text-white/80 text-base sm:text-lg md:text-xl tracking-tight max-w-lg leading-relaxed"
             style={{ textShadow: '0 2px 12px rgba(0,0,0,0.3)' }}
           >
@@ -158,7 +143,7 @@ const Home = () => {
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.85, duration: 0.6 }}
+            transition={{ delay: 0.7, duration: 0.6 }}
             className="flex flex-col sm:flex-row items-center gap-4 mt-8 sm:mt-10"
           >
             <Link to="/shop" className="w-full sm:w-auto">
@@ -172,6 +157,21 @@ const Home = () => {
                 داستان ما
               </button>
             </Link>
+          </motion.div>
+
+          {/* Logo with glow - at bottom */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.9, duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
+            className="relative mt-10 sm:mt-14"
+          >
+            <div className="absolute inset-0 blur-3xl bg-[#C9A84C]/20 rounded-full scale-[2.5]"></div>
+            <img
+              src={`${import.meta.env.BASE_URL}logo.png`}
+              alt="چای جاویدان"
+              className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain drop-shadow-[0_8px_30px_rgba(201,168,76,0.4)]"
+            />
           </motion.div>
         </div>
 
