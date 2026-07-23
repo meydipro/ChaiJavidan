@@ -77,45 +77,51 @@ const Home = () => {
     <div className="pt-20 overflow-x-hidden">
       {/* HERO - Parallax with floating leaves */}
       <div ref={heroRef} className="relative h-[100vh] min-h-[600px] max-h-[900px] flex items-center justify-center overflow-hidden bg-[#141A16]">
-        <div className="absolute inset-0 bg-[radial-gradient(#C9A84C_0.6px,transparent_1px)] bg-[length:6px_6px] opacity-20"></div>
+        {/* Subtle dot pattern */}
+        <div className="absolute inset-0 bg-[radial-gradient(#C9A84C_0.5px,transparent_1px)] bg-[length:8px_8px] opacity-15"></div>
 
+        {/* Background image with parallax */}
         <motion.div className="absolute inset-0 will-change-transform" style={{ y: heroY, opacity: heroOpacity }}>
-          <img src={content.heroImage} alt="چای جاویدان" className="w-full h-full object-cover" style={{ filter: 'brightness(0.55) saturate(1.15)' }} />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(20,26,22,0.6) 0%, rgba(20,26,22,0.2) 35%, rgba(20,26,22,0.3) 65%, rgba(20,26,22,0.8) 100%)' }}></div>
+          <img src={content.heroImage} alt="چای جاویدان" className="w-full h-full object-cover" style={{ filter: 'brightness(0.5) saturate(1.2)' }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(20,26,22,0.7) 0%, rgba(20,26,22,0.15) 30%, rgba(20,26,22,0.25) 60%, rgba(20,26,22,0.85) 100%)' }}></div>
         </motion.div>
 
         {/* Floating tea leaves */}
-        <div className="absolute inset-0 pointer-events-none">
-          <svg className="float-particle absolute top-[15%] left-[10%] w-8 h-8 text-[#C9A84C]/40" viewBox="0 0 24 24" fill="currentColor" style={{ animationDelay: '0s' }}>
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <svg className="float-particle absolute top-[12%] left-[8%] w-9 h-9 text-[#C9A84C]/30" viewBox="0 0 24 24" fill="currentColor" style={{ animationDelay: '0s' }}>
             <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
           </svg>
-          <svg className="float-particle absolute top-[25%] right-[15%] w-6 h-6 text-[#D4B85C]/30" viewBox="0 0 24 24" fill="currentColor" style={{ animationDelay: '2s' }}>
+          <svg className="float-particle absolute top-[20%] right-[12%] w-7 h-7 text-[#D4B85C]/25" viewBox="0 0 24 24" fill="currentColor" style={{ animationDelay: '2.5s' }}>
             <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
           </svg>
-          <svg className="float-particle absolute bottom-[30%] left-[20%] w-7 h-7 text-[#1B3A2B]/35" viewBox="0 0 24 24" fill="currentColor" style={{ animationDelay: '4s' }}>
+          <svg className="float-particle absolute bottom-[25%] left-[18%] w-6 h-6 text-[#1B3A2B]/30" viewBox="0 0 24 24" fill="currentColor" style={{ animationDelay: '5s' }}>
+            <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
+          </svg>
+          <svg className="float-particle absolute bottom-[35%] right-[22%] w-5 h-5 text-[#C9A84C]/20" viewBox="0 0 24 24" fill="currentColor" style={{ animationDelay: '3.5s' }}>
             <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
           </svg>
         </div>
 
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 sm:px-8 flex flex-col items-center text-center">
+        {/* Main content */}
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 sm:px-8 flex flex-col items-center text-center">
           {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15, duration: 0.5 }}
-            className="flex items-center gap-2.5 bg-white/10 backdrop-blur-xl px-5 py-2 rounded-full border border-white/15 shadow-lg mb-5 sm:mb-6"
+            transition={{ delay: 0.2, duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
+            className="flex items-center gap-2.5 bg-white/8 backdrop-blur-2xl px-5 py-2 rounded-full border border-white/10 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.3)] mb-6 sm:mb-8"
           >
             <div className="w-1.5 h-1.5 rounded-full bg-[#D4B85C] animate-pulse"></div>
-            <span className="text-[10px] sm:text-[11px] font-bold text-white/80 tracking-[5px] uppercase">از سال ۱۳۷۵</span>
+            <span className="text-[10px] sm:text-[11px] font-bold text-white/70 tracking-[6px] uppercase">از سال ۱۳۷۵</span>
           </motion.div>
 
           {/* Title */}
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
-            className="text-white text-[42px] sm:text-6xl md:text-[82px] leading-[1.05] font-bold tracking-tight"
-            style={{ textShadow: '0 4px 40px rgba(0,0,0,0.5), 0 1px 6px rgba(0,0,0,0.3)' }}
+            transition={{ delay: 0.35, duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
+            className="text-white text-[44px] sm:text-[64px] md:text-[88px] leading-[1.02] font-bold tracking-tight"
+            style={{ textShadow: '0 4px 60px rgba(0,0,0,0.6), 0 2px 8px rgba(0,0,0,0.4)' }}
           >
             {content.heroTitle}
           </motion.h1>
@@ -124,70 +130,73 @@ const Home = () => {
           <motion.div
             initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ delay: 0.45, duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
-            className="w-20 h-[1.5px] bg-gradient-to-r from-transparent via-[#D4B85C]/70 to-transparent my-5 sm:my-6"
-          />
+            transition={{ delay: 0.5, duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
+            className="flex items-center gap-3 my-6 sm:my-7"
+          >
+            <div className="w-12 sm:w-16 h-[1px] bg-gradient-to-r from-transparent to-[#D4B85C]/50"></div>
+            <div className="w-1.5 h-1.5 rounded-full bg-[#D4B85C]/60"></div>
+            <div className="w-12 sm:w-16 h-[1px] bg-gradient-to-l from-transparent to-[#D4B85C]/50"></div>
+          </motion.div>
 
           {/* Subtitle */}
           <motion.p
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.55, duration: 0.6 }}
-            className="text-white/80 text-base sm:text-lg md:text-xl tracking-tight max-w-lg leading-relaxed"
-            style={{ textShadow: '0 2px 12px rgba(0,0,0,0.3)' }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className="text-white/70 text-base sm:text-lg md:text-[21px] tracking-wide max-w-md leading-relaxed font-light"
+            style={{ textShadow: '0 2px 16px rgba(0,0,0,0.3)' }}
           >
             {content.heroSubtitle}
           </motion.p>
 
           {/* Buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
-            className="flex flex-col sm:flex-row items-center gap-4 mt-8 sm:mt-10"
+            transition={{ delay: 0.75, duration: 0.6 }}
+            className="flex flex-col sm:flex-row items-center gap-4 mt-9 sm:mt-11"
           >
             <Link to="/shop" className="w-full sm:w-auto">
-              <button className="w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-[#D4B85C] to-[#C9A84C] text-[#1B3A2B] font-bold text-sm sm:text-base rounded-2xl flex items-center justify-center gap-2.5 group hover:from-[#C9A84C] hover:to-[#8B6914] transition-all shadow-lg hover:shadow-xl">
+              <button className="w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-[#D4B85C] via-[#C9A84C] to-[#D4B85C] text-[#1B3A2B] font-bold text-sm sm:text-[15px] rounded-2xl flex items-center justify-center gap-2.5 group hover:shadow-[0_8px_40px_-8px_rgba(212,184,92,0.5)] transition-all duration-300">
                 مشاهده فروشگاه
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </Link>
             <Link to="/about" className="w-full sm:w-auto">
-              <button className="w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-sm text-white border border-white/20 hover:bg-white/20 font-medium text-sm sm:text-base rounded-2xl transition-all">
+              <button className="w-full sm:w-auto px-8 py-4 bg-transparent text-white/90 border border-white/15 hover:bg-white/10 hover:border-white/25 font-medium text-sm sm:text-[15px] rounded-2xl transition-all duration-300 backdrop-blur-sm">
                 داستان ما
               </button>
             </Link>
           </motion.div>
-
-          {/* Logo with glow - at bottom */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.9, duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-            className="relative mt-10 sm:mt-14"
-          >
-            <div className="absolute inset-0 blur-3xl bg-[#C9A84C]/20 rounded-full scale-[2.5]"></div>
-            <img
-              src={`${import.meta.env.BASE_URL}logo.png`}
-              alt="چای جاویدان"
-              className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain drop-shadow-[0_8px_30px_rgba(201,168,76,0.4)]"
-            />
-          </motion.div>
         </div>
+
+        {/* Logo watermark - subtle at bottom */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.12 }}
+          transition={{ delay: 1, duration: 1.2 }}
+          className="absolute bottom-20 sm:bottom-28 left-1/2 -translate-x-1/2 z-[4] pointer-events-none"
+        >
+          <img
+            src={`${import.meta.env.BASE_URL}logo.png`}
+            alt=""
+            className="w-32 h-32 sm:w-40 sm:h-40 object-contain"
+          />
+        </motion.div>
 
         {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-30"
+          transition={{ delay: 1.3, duration: 0.8 }}
+          className="absolute bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-30"
         >
-          <span className="text-[9px] text-white/40 tracking-[6px] uppercase font-semibold">اسکرول</span>
-          <div className="w-px h-10 bg-gradient-to-b from-[#D4B85C]/50 via-[#D4B85C]/20 to-transparent animate-pulse"></div>
+          <span className="text-[8px] text-white/30 tracking-[8px] uppercase font-medium">اسکرول</span>
+          <div className="w-px h-8 bg-gradient-to-b from-[#D4B85C]/40 to-transparent"></div>
         </motion.div>
 
         {/* Bottom gradient fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#FAF7F0] dark:from-[#141A16] via-[#FAF7F0]/50 dark:via-[#141A16]/50 to-transparent pointer-events-none z-[5]"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-52 bg-gradient-to-t from-[#FAF7F0] dark:from-[#141A16] via-[#FAF7F0]/40 dark:via-[#141A16]/40 to-transparent pointer-events-none z-[5]"></div>
       </div>
 
       {/* STATS - Liquid Glass */}
