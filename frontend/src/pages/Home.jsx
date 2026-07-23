@@ -42,9 +42,17 @@ const CountUp = ({ end, duration = 2 }) => {
 const Home = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
   const heroRef = useRef(null);
+  const carouselRef = useRef(null);
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 600], [0, 150]);
   const heroOpacity = useTransform(scrollY, [0, 400], [1, 0.3]);
+
+  const scrollCarousel = (direction) => {
+    if (carouselRef.current) {
+      const scrollAmount = carouselRef.current.offsetWidth * 0.75;
+      carouselRef.current.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
+  };
   const [content, setContent] = useState({
     heroTitle: "چای جاویدان",
     heroSubtitle: "طعم اصیل ایرانی در هر فنجان",
@@ -237,7 +245,8 @@ const Home = () => {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        {/* Desktop: Grid / Mobile: Carousel */}
+        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {featuredProducts.map((product, index) => (
             <motion.div
               key={product.id}
@@ -250,7 +259,44 @@ const Home = () => {
           ))}
         </div>
 
-        <Link to="/shop" className="sm:hidden flex items-center justify-center text-sm text-[#C9A84C] mt-8 font-medium gap-2">
+        {/* Mobile Carousel */}
+        <div className="sm:hidden relative">
+          <div
+            ref={carouselRef}
+            className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 -mx-4 px-4"
+            style={{ scrollBehavior: 'smooth' }}
+          >
+            {featuredProducts.map((product, index) => (
+              <motion.div
+                key={product.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.08, duration: 0.4 }}
+                className="snap-start shrink-0 w-[70vw] max-w-[280px]"
+              >
+                <ProductCard product={product} />
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Carousel arrows */}
+          <button
+            onClick={() => scrollCarousel(-1)}
+            className="absolute top-1/2 -translate-y-1/2 -right-2 w-9 h-9 rounded-full bg-white/90 dark:bg-[#1E2A22]/90 backdrop-blur-sm border border-[#C9A84C]/15 shadow-lg flex items-center justify-center text-[#8B6914] dark:text-[#D4B85C] hover:bg-white dark:hover:bg-[#1E2A22] transition-all z-10 active:scale-95"
+            aria-label="محصول قبلی"
+          >
+            <svg className="w-4 h-4 rotate-180" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </button>
+          <button
+            onClick={() => scrollCarousel(1)}
+            className="absolute top-1/2 -translate-y-1/2 -left-2 w-9 h-9 rounded-full bg-white/90 dark:bg-[#1E2A22]/90 backdrop-blur-sm border border-[#C9A84C]/15 shadow-lg flex items-center justify-center text-[#8B6914] dark:text-[#D4B85C] hover:bg-white dark:hover:bg-[#1E2A22] transition-all z-10 active:scale-95"
+            aria-label="محصول بعدی"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+        <Link to="/shop" className="sm:hidden flex items-center justify-center text-sm text-[#C9A84C] mt-6 font-medium gap-2">
           مشاهده همه محصولات <ArrowRight className="w-4 h-4" />
         </Link>
       </div>
